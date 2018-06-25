@@ -1,0 +1,123 @@
+page{
+   background-color: #f7f7f7; 
+}
+
+.tabBar{
+  font-size: 28rpx;
+  line-height: 90rpx;
+  /* font-weight: 300; */
+  position: relative;
+  background-color: #fff;
+}
+
+.active{
+  color: #a53f35;
+}
+
+.border{
+  width: 72rpx;
+  height: 4rpx;
+  background-color: #a53f35;
+  position: absolute;
+  bottom: 0;
+  transition: .2s ;
+}
+
+.empty{
+  margin-top: 36%;
+}
+
+.empty image{
+  width: 210rpx;
+}
+
+.notice{
+  margin-top: 16rpx;
+}
+
+.notice text{
+  font-size: 36rpx;
+  color: #666;
+}
+
+.item-wrapper{
+  background-color: #f7f7f7;
+}
+
+.item{
+  background-color: #fff;
+  margin: auto;
+  margin-top: 32rpx;
+  width: 86%;
+  padding:21rpx 27rpx;
+}
+
+.item .type{
+  font-size: 34rpx;
+}
+
+.end{
+  font-size: 26rpx;
+}
+
+.index{
+  font-size: 21rpx;
+  color: #626262;
+}
+
+.wrap{
+   font-size: 30rpx; 
+}
+
+.price{
+  font-size: 35rpx;
+}
+
+.remain{
+  font-size: 24rpx;
+  color: #ccc;
+}
+
+.exchange{
+  margin-top: 21rpx;
+  font-size: 24rpx;  
+}
+
+input{
+  width: 100%;
+  border: solid 1px #ccc;
+  font-size: 26rpx;
+  padding-top: 2rpx;
+  padding-bottom: 2rpx;
+  margin-top: 2rpx;
+}
+
+button{
+  display: unset;
+  font-size: 24rpx;
+  padding: 10rpx 36rpx; 
+  background-color: #a53f35;
+  color: #fff;
+  border-radius: 0;
+}
+
+.tip{
+  line-height:56rpx;
+  font-size:32rpx;
+}
+
+.col-35{
+  width: 35%;
+}
+
+.condition{
+  font-size: 21rpx;
+  color: #626262;
+  line-height:36rpx;
+  display:flex;
+  margin-top: 10rpx;
+}
+
+.item > .border-b{
+  padding-bottom: 12rpx;
+}

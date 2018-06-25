@@ -1,0 +1,58 @@
+.container{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   border-top: solid 1rpx #E5E5E5;
+   align-items: center;
+   font-weight: 300;
+}
+/*第一行   */
+.box1{
+   /* height: 120rpx; */
+   width: 95%;
+   border-bottom: solid 1rpx #E5E5E5;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   padding-top: 21rpx;
+   padding-bottom: 21rpx; 
+}
+/*每行标题  */
+.title{
+   font-size: 32rpx;
+}
+/*头像图片  */
+.box1 image{
+   width: 96rpx;
+   height: 96rpx;
+   margin-right: 20rpx;
+   border-radius: 50%;
+}
+/*二三四五行  */
+.box2{
+   /* height: 100rpx; */
+  width: 95%;
+  border-bottom: solid 1rpx #E5E5E5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;  
+  padding-top: 32rpx;
+  padding-bottom: 32rpx;
+}
+/*行右边 文字  */
+.name{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;  
+   font-size: 28rpx;
+   color: #999999;
+}
+/*行右边 箭头  */
+.box2 image{
+   width: 15rpx;
+   height: 27rpx;
+   margin-left: 20rpx;
+}

@@ -1,0 +1,66 @@
+<view class='container border-t' hidden='{{!connect}}'>
+  <view class='tabBar flex-row text-center border-b'>
+    <view class='col-50 tab {{ 0 == active ? "active" : "" }}' bindtap='tab' data-tab='0'>
+      未过期({{usable}})
+    </view>
+    <view class='col-50 tab {{ 1 == active ? "active" : "" }}' bindtap='tab' data-tab='1'>
+      已使用({{used}})
+    </view>
+    <view class='col-50 tab {{ 2 == active ? "active" : "" }}' bindtap='tab' data-tab='2'>
+      已过期({{overtime}})
+    </view>
+    <view class='border' style='left: {{left}}rpx'></view>
+  </view>
+  <!-- 兑换栏  -->
+  <view class='exchange flex-row'>
+    <view class='col-25 text-center tip'>兑换编号：</view>
+    <view class='col-50'>
+      <input type='text' placeholder='请输入优惠券兑换码' value='{{code}}' bindinput='bindCode'></input>
+    </view>
+    <view class='col-25 text-center'>
+      <button bindtap='exchange'>兑换</button>
+    </view>    
+  </view>
+
+  <!-- 订单列表  -->
+  <view class='item-wrapper'>
+    <view class='item not' wx:for='{{dataList}}' wx:key="{{index}}" data-index='{{index}}' bindtap='Take'>
+      <view class='border-b flex-row'>
+        <view class='type col-40'>
+          <view class='color-default'>{{item.name}}</view>
+          <view class='end'>有效期至{{item.time}}</view>          
+        </view>
+        <view class='index'>
+          <view>
+            编号: {{item.id}}
+          </view>
+        </view>
+        <!-- {{ item.type == "ManJian" ? (item.manJian < total ? "color-default" : "" ) : "color-default" }}  -->
+        <view class='detail text-right col-25'>
+          <view class='wrap color-default'>¥ <text class='price'>{{item.value}}</text></view>
+          <view class='remain'>{{item.name}}</view>
+        </view>
+      </view> 
+      <view>
+        <text class='condition'>{{item.remark}}</text>
+      </view> 
+    </view>
+  </view>
+
+   <!-- 列表为空提示  -->
+   <view wx:if='{{dataList.length == 0}}' class='empty text-center'>
+    <image mode='widthFix' src='../images/empty.png'></image>
+    <view class='notice'>
+      <text>暂无红包哦~</text>
+    </view>
+  </view>  
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

@@ -1,0 +1,440 @@
+.container{
+  padding-bottom: 210rpx;
+}
+
+.tabBar{
+  font-size: 30rpx;
+  line-height: 90rpx;
+  /* font-weight: 300; */
+  position: relative;
+  background-color: #fff;
+  color: #666;
+}
+
+.active{
+  color: #a53f35;
+}
+
+.border{
+  width: 72rpx;
+  height: 4rpx;
+  background-color: #a53f35;
+  position: absolute;
+  bottom: 0;
+  transition: .2s ;
+}
+
+.selfTaking, .helpTaking{
+  font-size: 28rpx;
+  padding: 21rpx;
+  line-height: 50rpx; 
+  /* font-weight: 300;  */
+  position: relative;
+}
+
+.arrow{
+  width: 18rpx;
+  position: absolute;
+  right: 21rpx;
+  top: 102rpx;
+}
+
+.assume{
+  font-size: 26rpx;
+  padding: 21rpx;  
+  /* line-height: 50rpx;    */
+  border-bottom: solid #f7f7f7 21rpx;
+}
+
+.inline{
+  padding-top: 12rpx;
+  padding-bottom: 12rpx;
+}
+
+.option{
+  border: solid 1rpx #a53f35;
+  color: #a53f35;
+  display: inline-block;
+  padding: 4rpx 15rpx;
+}
+
+.option.active{
+  color: #fff;
+  background-color: #a53f35;
+}
+
+.for{
+  position: relative;
+  top: 7rpx;
+}
+
+.other{
+  padding: 21rpx;
+  border-bottom: solid #f7f7f7 21rpx;  
+}
+
+.datePicker{
+  border: solid 1rpx #ccc;
+  width:180rpx; 
+  padding: 2rpx 7rpx;
+  text-align: center;
+}
+
+.title{
+  font-size: 28rpx;
+}
+
+.invoicePicker{
+  border: solid 1rpx #ccc;  
+  padding: 2rpx 7rpx; 
+  padding-right: 48rpx; 
+  position: relative;
+  
+}
+
+.payDate, .lastDate, .saleMan, .invoice{
+  font-size: 26rpx;
+  padding-top: 7rpx;
+  padding-bottom: 7rpx;
+  color: #666;
+}
+
+.picker image{
+  width: 28rpx;
+  position: absolute;
+  right: 2rpx;
+  top: 7rpx;
+}
+
+.company{
+  font-size: 28rpx;
+  padding: 21rpx;
+}
+
+.company image{
+  width: 32rpx;
+  position: relative;
+  top: 3rpx;
+  margin-right: 21rpx;
+}
+
+.item{
+  margin-bottom: 7px;
+}
+
+.brief{
+  background-color: #f7f7f7;
+  padding: 21rpx;
+  font-size: 24rpx;
+  padding-bottom: 4rpx;
+  color: #666;
+}
+
+.unit{
+  margin-top: 21rpx;
+  color: #c8c8c8;
+}
+
+.arrow-d{
+  width: 42rpx;
+  transition: 0.4s;
+}
+
+.productDetail{
+  padding: 21rpx;
+  font-size: 24rpx;
+  padding-bottom: 0;
+  border-bottom: solid 21rpx #f7f7f7;  
+}
+
+.productDetail .option{
+  padding: 1rpx 15rpx;
+}
+
+.tap{
+  color: #626262;
+}
+
+.cutdetail{
+  padding-top: 7rpx;
+  padding-bottom: 12rpx;
+}
+
+.cutdetail .cutdetail2{
+  font-size: 26rpx;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.thead{
+  line-height: 64rpx;
+  color: rgba(0, 0, 0, 0.84);  
+}
+
+.tbody{
+  line-height: 54rpx;
+  color: #c1c1c1;
+}
+
+.singleTotal{
+  font-size: 26rpx;
+  padding: 21rpx;
+}
+
+.price{
+  font-size: 34rpx;
+  font-weight: 300;
+}
+
+.oldPrice{
+  font-size: 26rpx;
+  color: #ccc;
+  font-weight: 300;  
+  text-decoration: line-through;
+}
+
+.itemMarker, .orderMarker{
+  font-size: 26rpx;
+  padding: 21rpx;
+  color: #626262;
+}
+
+.itemMarker textarea, .orderMarker textarea{
+  width: 100%;
+  height: 120rpx;
+  background-color: #f9f9f9;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.discount{
+  font-size: 26rpx;
+  padding: 21rpx;
+  color: #626262;
+  padding-bottom: 4rpx;
+  line-height: 48rpx;
+}
+
+.arrow2{
+  width: 15rpx;
+  margin-left: 16rpx;
+  position: relative;
+  top: 2rpx;
+  right: 4rpx;
+}
+
+.fee{
+  font-size: 26rpx;
+}
+
+.count{
+  font-size: 26rpx;
+  padding: 21rpx;
+  color: #626262;
+  border-bottom: solid 21rpx #f7f7f7;
+}
+
+ .price-warpper{
+  position: relative;
+  top: -7rpx;
+} 
+
+.price2{
+  font-size: 32rpx;
+  font-weight: 300;
+}
+
+.orderMarker{
+  padding-top: 27rpx;
+  padding-bottom: 27rpx;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  opacity: 1;
+}
+
+.count2{
+  font-size: 26rpx;
+  padding: 21rpx 21rpx 12rpx;
+  color: #626262;
+}
+
+.operation{
+  height: 100rpx;
+}
+
+.submit{
+  font-size: 30rpx;
+  background-color: #a53f35;
+  color: #fff;
+  line-height: 100rpx;
+}
+
+.service, .tel{
+  font-size: 26rpx;
+  color: #626262;
+  font-weight: 300;
+  padding-top: 6rpx;
+}
+
+.smile{
+  width: 32rpx;
+  position: relative;
+  top: 11rpx;
+}
+
+.phone2{
+  width: 32rpx; 
+  position: relative;
+  top: 11rpx;
+  margin-bottom: 3rpx;
+}
+
+textarea{
+  z-index: 1
+}
+
+.submit form{
+  width: 100%;
+  height: 100%;
+}
+
+.submit button{
+  /* display: unset; */
+  color: #fff;
+  background-color: transparent;
+  /* padding:24rpx 118rpx; */
+}
+
+button::after{
+  border: none;
+}
+
+.cover{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index:9999999;
+  overflow: hidden
+}
+
+.cover .content{
+  width: 70%;
+  margin: auto;
+  margin-top: 42%;
+  background-color: #fff;
+  font-size: 32rpx;
+  padding: 48rpx 72rpx;
+  border-radius: 12rpx;
+}
+
+.cover .content view{
+  line-height: 84rpx;
+}
+
+.content input{
+  display: inline-block;
+  border: solid 1rpx #ccc;
+  width: 148rpx;
+}
+
+.cover .operate{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  height: 108rpx;
+  line-height: 108rpx;
+  font-size: 32rpx;
+}
+
+.stamp{
+  font-weight: 300;
+  font-size: 34rpx;
+}
+
+.cover .operate .cancel{
+  color: #ccc;
+}
+
+.cover .operate .not{
+  color: #a53f35;
+  border-left: solid 1rpx #a53f35;
+  border-top: solid 1rpx #a53f35;
+}
+
+.cover .operate .confirm{
+  background-color: #a53f35;
+  color: #fff;
+   transition: all 0.3s ease-in-out; 
+}
+
+.useAll{
+  font-size: 28rpx;
+  position: relative;
+  /* bottom: 2rpx; */
+  margin-left: 12rpx;
+}
+
+ .cover.hidden{
+  display: none;
+}
+
+.cover.show{
+  display: block;
+} 
+
+.noscroll {
+  height: 100%;
+  overflow: hidden;
+} 
+
+.arrow-d.roll{
+  transform: rotate(180deg);
+}
+/* 
+.qrcode{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.81);
+  z-index: 999;
+}
+
+.qrcode image{
+  width: 300rpx;
+  margin-top: 52%;
+}
+
+.scan {
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 48rpx;
+} */
+
+.contact{
+  width:100%;
+  height:39px;
+  border:none;
+  background-color:#fff;
+  font-size:26rpx;
+  display:unset;
+  padding:12rpx;
+  padding-top: 19rpx;
+  background:transparent;
+  color:#666;
+}
+
+.img2{
+  position: absolute;
+  top: 0;
+  left:79rpx;
+}

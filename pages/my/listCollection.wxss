@@ -1,0 +1,46 @@
+.container{
+    border-top: solid 1rpx #E5E5E5;
+}
+
+.content{
+   height: 75rpx;
+   border-bottom: solid 1rpx #E5E5E5;
+   font-size: 26rpx;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+}
+
+image{
+   width: 28rpx;
+   height: 28rpx;
+}
+
+.txt{
+   color: #999999;
+}
+
+.brief{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  padding-left: 12rpx;
+}
+
+.empty{
+  margin-top: 36%;
+}
+
+.empty image{
+  width: 210rpx;
+}
+
+.notice{
+  margin-top: 16rpx;
+}
+
+.notice text{
+  font-size: 36rpx;
+  color: #666;
+}

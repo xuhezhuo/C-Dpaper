@@ -1,0 +1,25 @@
+<view class='container'>
+<!--手机号码  -->
+   <view class='content'>
+      <text class='title'>手机号</text>
+      <input type='number' class='text1' disabled='true' value='{{mobile}}'></input>
+   </view>
+<!--验证码  -->
+   <view class='content'>
+      <text class='title'>验证码</text>
+      <input type='number' placeholder-class='ph' class='text2' value='{{code}}' bindinput='bindCodeInput'></input>
+      <view class='code' bindtap='sentCode'>{{timer}}</view>
+   </view>
+<!--新密码  -->
+   <view class='content'>
+      <text class='title'>新密码</text>
+      <input class='text1' value='{{password}}' bindinput='bindPswInput'></input>
+   </view>
+<!--确认新密码  -->
+   <view class='content'>
+      <text class='title'>确认密码</text>
+      <input class='text1' value='{{pwdRepeat}}' bindinput='bindPsw2Input'></input>
+   </view>
+<!--确认新密码  -->
+   <button class='confirm' bindtap='setting'>确认修改</button>
+</view>

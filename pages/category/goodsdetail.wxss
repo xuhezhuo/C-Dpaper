@@ -1,0 +1,279 @@
+.detail{
+  font-size: 28rpx;
+  padding: 24rpx;
+  color: #111;
+  /* font-weight: 300; */
+  line-height: 48rpx;
+}
+
+.oldPrice{
+  text-decoration: line-through;
+  color: #666;
+}
+
+.down{
+  margin-left: 32rpx;
+}
+
+.weight{
+  font-size: 28rpx;
+  padding: 24rpx;
+  color: #111;
+  /* font-weight: 300; */
+  line-height: 56rpx;
+}
+
+button::after{
+  border: none;
+}
+
+.perweight{
+  color:#a53f35;
+  background-color:#fff;
+  border-radius:0;
+  display:unset;
+  margin-right:10px;
+  padding:6rpx 24rpx;
+  font-size:26rpx;
+  border: solid 1rpx #a53f35;  
+}
+
+.perweight.active{
+  color:#fff;
+  background-color:#a53f35;
+}
+
+.warehouse{
+  width: 100%;
+  flex-wrap: wrap;
+  /* padding-top: 24rpx; */
+}
+
+.wrapper{
+  margin: auto;
+  width: 324rpx; 
+  color:#666;
+  border: solid 1rpx rgba(240,240,240,0.72);    
+  font-size: 25rpx;  
+  padding-top: 28rpx;   
+  padding-bottom: 28rpx;  
+  margin-top: 32rpx;   
+}
+
+ .wrapper.active{
+  color:#fff;
+  background-color:#a53f35;
+  border: none;
+} 
+
+.isolation{
+  margin-top: 27rpx;
+  height: 28rpx;
+  background-color: #f7f7f7;
+}
+
+.company{
+  background-color: #fff;
+  border-bottom: solid 1rpx rgba(240,240,240,0.72);
+  margin-bottom: 102rpx;
+}
+
+.company .description{
+  margin: 0 auto;
+  width: 94%; 
+  transition: all .4s ease-in-out;
+  font-size: 26rpx;
+  font-weight: 300;
+  line-height: 42rpx; 
+  margin-bottom: 21rpx;
+  margin-top: 12rpx;
+}
+
+.company .brief{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.brief .logo{
+  width: 25%;
+}
+
+.brief .logo image{
+  width: 152rpx;
+  height: 152rpx;
+  position: relative;
+  left: 21rpx;
+  top: 32rpx;
+}
+
+.brief .mention{
+  width: 67%;
+}
+
+.brief .mention view{
+  height: 109rpx;
+}
+
+.brief .mention .title{
+  line-height: 150rpx;
+  font-size: 28rpx;
+  font-weight: 300;
+  padding-top: 32rpx;
+}
+
+.mention .contact2{
+  font-size: 30rpx;
+  line-height: 109rpx;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+}
+
+.mention .contact2 .name{
+  width: 32%;
+}
+
+.mention .contact2 .mobile{
+  width: 68%;
+}
+
+.brief .arrow{
+  width: 8%;
+}
+
+.brief .arrow image{
+  width: 52rpx;
+  height: 52rpx;
+  position:relative;
+  left: -7rpx;
+  top: 88rpx;
+  transition: 0.4s;
+}
+
+.brief .arrow image.active{
+  transform: rotate(180deg);
+}
+
+.company .phone{
+  width:50rpx;
+  height:50rpx;
+  position:relative;
+  top:16rpx;
+}
+
+/* 底部操作  */
+.service{
+  position: fixed;
+  bottom: 0;
+  /* display: none; */
+  height: 100rpx; 
+  width: 100%;
+  background-color: #fff;
+  font-size: 24rpx;
+  color: #666;
+  font-weight: 300;
+  z-index: 999;
+}
+
+
+.smile, .star{
+  width: 36rpx;
+  position: relative;
+  top: 15rpx;
+}
+
+.service .phone{
+   width: 36rpx; 
+  /* width:100%; */
+    /* position: relative; */
+  /* top: 15rpx; */
+}
+
+.service .cart{
+  width: 42rpx;
+}
+
+.low{
+  line-height: 60rpx;
+}
+
+.buy{
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #a53f35;
+}
+
+.cart-wrapper{
+  border: solid 1rpx #a53f35;
+}
+
+.cart-wrapper image, .phone{
+  position:relative;
+  top:12rpx;
+}
+
+.add{
+  padding-top: 4rpx;
+}
+
+.mobile{
+  position: relative;
+  top: 12rpx;
+}
+
+.collection{
+  position: relative;
+  top: 5rpx;
+}
+
+.new_price{
+  font-size: 32rpx;
+}
+
+.name-wrapper{
+  overflow:  hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+}
+/* 
+.qrcode{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.81);
+  z-index: 999;
+}
+
+.qrcode image{
+  width: 300rpx;
+  margin-top: 52%;
+}
+
+.scan {
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 48rpx;
+} */
+
+.contact{
+  width: 100%;
+  height: 99rpx;
+  border: none;
+  background-color: #fff;
+  font-size: 24rpx;
+  display:unset;
+  padding:12rpx;
+  padding-top:48rpx;
+  background: transparent;
+  color: #666;
+}
+
+.img2{
+  position: absolute;
+  top: 0;
+  left: 23rpx;
+}

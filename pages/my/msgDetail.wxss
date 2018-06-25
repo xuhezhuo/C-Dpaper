@@ -1,0 +1,14 @@
+.container{
+  padding: 21rpx;
+}
+
+.title{
+  font-size: 34rpx;
+}
+
+.content{
+  font-size: 30rpx;
+  text-indent: 2em;
+  margin-top: 27rpx;
+  color: #626262;
+}

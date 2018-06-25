@@ -1,0 +1,190 @@
+.container{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+/*提交信息查看订单模块  */
+.box1{
+   height: 180rpx;
+   width: 100%;
+   /* border-top: solid 1rpx #e6e6e6; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 21rpx;
+   margin-bottom: 21rpx;
+   color: #626262;
+}
+/*你还可以模块  */
+.box2{
+   height:200rpx;
+   width: 100%;
+   border-top: solid 1rpx #e6e6e6;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+/*提交信息查看订单-图标模块样式  */
+.first{
+   height: 100rpx;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+  
+}
+/*提交信息查看订单-文字模块样式  */
+.second{
+   height: 40rpx;
+   width: 650rpx;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   font-size: 30rpx;
+   margin-top: 21rpx;
+   margin-bottom: 28rpx;
+}
+/*提交信息查看订单-文字模块-分界线样式  */
+.fenxian{
+   height: 32rpx;
+   width: 3rpx;
+   background: #232323;
+}
+/*提交信息查看订单-图标样式  */
+.icon1{
+   width:54rpx;
+   height:54rpx;
+}
+.icon2{
+   width:46rpx;
+   height:54rpx;
+}
+/*你还可以-每行样式  */
+.box2 .one,.box2 .two,.box2 .three{
+  font-size: 28rpx;
+   width: 90%;
+   height:60rpx;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+
+}
+/*你还可以-第二、第三行图标样式  */
+.box2 image{
+   width: 32rpx;
+   height: 32rpx;
+}
+/*你还可以-第二、第三行文字样式  */
+.contact{
+  margin-left: 30rpx;
+  color: #777; 
+  font-weight: 300;
+  
+}
+/*分界线  */
+.gray{
+   width: 100%;
+   height: 20rpx;
+   background: #f7f7f7;
+}
+/*付款信息模块样式  */
+.box3{
+   width:90%;
+   height: 300rpx;
+   display: flex;
+   flex-direction:column; 
+}
+
+/*付款信息模块-第一行样式  */
+.box3_one{
+   margin-top: 20rpx;
+   margin-bottom: 7rpx;
+   flex: 1;
+   width: 90%;
+   font-size: 32rpx;
+}
+
+/*付款信息-第二、三、四、五行样式  */
+.box3_two{
+   flex: 1;
+   width: 70%;
+   font-size: 27rpx;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start; 
+   color: #626262; 
+}
+
+/* .qrcode{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.81);
+  z-index: 999;
+}
+
+.qrcode image{
+  width: 300rpx;
+  margin-top: 52%;
+}
+
+.scan {
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 48rpx;
+} */
+
+.btn{
+  margin-top: 32rpx;
+}
+
+.btn button{
+  display: unset;
+  padding: 21rpx 120rpx;
+  background-color: #a53f35;
+  color: #fff;
+}
+
+.btn button::after{
+  border: none;
+}
+
+.firm{
+  font-size: 24rpx;
+  padding: 21rpx;
+  line-height: 46rpx;  
+}
+
+.title{
+  font-size: 30rpx;
+  padding: 21rpx;
+}
+
+.payM{
+  background-color: #fff;
+  /* margin-bottom: 32rpx; */
+  padding-bottom: 18rpx;
+  border-bottom: solid #f7f7f7 27rpx;
+  width:100%;
+}
+
+.contact{
+  border: none;
+  background-color: #fff;
+  font-size: 24rpx;
+  display:unset;
+  padding:12rpx;
+   background: transparent; 
+  color: #666;
+}
+
+button::after{
+  border: none;
+}
+

@@ -1,0 +1,17 @@
+<view class='container' hidden='{{!connect}}'>
+  <view class='title text-center'>
+    {{title}}
+  </view>
+  <view class='content'>
+    <text>{{content}}</text>
+  </view>
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<view class='container' hidden='{{!connect}}'>
+  <radio-group bindchange="radioChange">
+    <view class='content flex-row' wx:for='{{dataList}}' wx:key='{{index}}'
+    data-id='{{item.addressID}}' data-index='{{index}}'  bindtap='take'>
+      <view class='col-10 text-left'>
+          <radio color='#a53f35'  value="{{item.addressID}}" checked='{{item.addressID == addressID}}'/>
+      </view>
+      <view class='information col-50'>
+          <view class='information_name text-left'>
+            {{item.linkman}}
+          </view>
+          <view class='information_car text-left'>
+            {{item.province + item.city + item.district + item.address}}
+          </view>
+      </view>
+      <view class='number'>{{item.telephone}}</view>  
+    </view> 
+  </radio-group>
+
+  <view class='foot'>
+      <view wx:if='{{!setting}}' class='add' bindtap='addClick'>新增</view>
+      <view wx:if='{{setting}}' class='add' bindtap='cancel'>取消</view>
+      <view wx:if='{{!setting}}' class='manage' bindtap='setting'>管理</view>
+      <view wx:if='{{setting}}' class='manage' bindtap='del'>删除</view>      
+  </view>
+ 
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

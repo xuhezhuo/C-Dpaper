@@ -1,0 +1,78 @@
+<view class='container border-t'>
+  <view class='flex-row item border-b'>
+    <view class='col-30 text-center'>
+      客户名称：
+    </view>
+    <view class='col-70'>
+      <input placeholder='请输入客户姓名' value='{{name}}' bindinput='bindName'></input>
+    </view>
+  </view>
+  <view class='flex-row item border-b'>
+    <view class='col-30 text-center'>
+      <text decode='true'>联&nbsp;&nbsp;系&nbsp;&nbsp;人：</text>
+    </view>
+    <view class='col-70'>
+      <input placeholder='请输入联系人姓名' value='{{contact}}' bindinput='bindContact'></input>
+    </view>
+  </view>
+  <view class='flex-row item border-b'>
+    <view class='col-30 text-center'>
+      联系电话：
+    </view>
+    <view class='col-70'>
+      <input placeholder='请输入联系电话' type='number' value='{{mobile}}' bindinput='bindMobile'></input>
+    </view>
+  </view>
+  <view class='flex-row item border-b'>
+    <view class='col-30 text-center'>
+      邮政编码：
+    </view>
+    <view class='col-70'>
+      <input placeholder='请输入邮政编码' type='number' value='{{post}}' bindinput='bindPost'></input>
+    </view>
+  </view>
+  <view class='flex-row address border-b'>
+    <!-- 省 -->
+    <view class='col-33 text-center'>
+      <picker class='proPicker' value="{{pro}}" bindchange="bindProChange" range="{{proList}}" range-key='codeName'>
+        <view class="picker">
+          <text>{{pro}}</text>
+          <image class='arrow2' mode='widthFix' src='../images/arrow.png'></image>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 市  -->
+    <view class='col-33 text-center'>
+      <picker class='cityPicker' value="{{city}}" bindchange="bindCityChange" range="{{cityList}}" range-key='codeName'> 
+        <view class="picker">
+          <text>{{city}}</text>
+          <image class='arrow2' mode='widthFix' src='../images/arrow.png'></image>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 区 -->
+    <view class='col-33 text-center'>
+      <picker class='distPicker' value="{{dist}}" bindchange="bindDistChange" range="{{distList}}" range-key='codeName'>
+        <view class="picker">
+          <text>{{dist}}</text>
+          <image class='arrow2' mode='widthFix' src='../images/arrow.png'></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class='flex-row item border-b'>
+    <view class='col-30 text-center xxdz'>
+      详细地址：
+    </view>
+    <view class='col-70' style='padding-right: 15rpx;'>
+      <textarea placeholder='请输入详细地址' value='{{address}}' bindinput='bindAddress'></textarea>
+    </view>
+  </view>
+
+  <view class='btn-wrapper'>
+    <button class='btn' bindtap='addClick'>新增</button>
+  </view>
+</view>

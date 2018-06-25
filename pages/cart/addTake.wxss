@@ -1,0 +1,27 @@
+.item{
+  font-size: 34rpx;
+  padding: 27rpx 14rpx 24rpx 14rpx;
+  font-weight: 300;
+}
+
+input{
+  padding-top: 9rpx;
+}
+
+.btn-wrapper{
+  margin-top: 64rpx;
+  text-align: center;
+}
+
+.btn{
+  display: unset;
+  padding: 27rpx 280rpx;
+  color: #fff;
+  background-color: #a53f35;
+  border-radius: 19rpx;
+  font-weight: 300;
+}
+
+button::after{
+  border: none;
+}

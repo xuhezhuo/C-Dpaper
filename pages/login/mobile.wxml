@@ -1,0 +1,25 @@
+<view class='container'>
+<!--移动电话  -->
+   <view class='content'>
+      <input type='number' placeholder-class='ph' class='telephone' placeholder='移动电话' value='{{mobile}}' bindinput='bindMobileInput' ></input>
+   </view>
+<!--验证码  -->
+   <view class='content'>
+      <input type='number' placeholder-class='ph' class='code' placeholder='验证码' value='{{code}}' bindinput='bindCodeInput' ></input>
+      <view class='send' bindtap='sentCode'>{{timer}}</view>
+   </view>
+<!--同意条款  -->
+   <view class='tiaokuan'>
+      <checkbox bindtap='aa' class="checkbox1" checked='{{read}}' color='#A53F35' />
+       我已经看过并同意
+      <navigator url="./agreement" class='red'>
+        《建发纸业服务条款》
+      </navigator>
+   </view>
+<!--注册按钮  -->
+   <view class='anniu'>
+      <button  class='confirm' bindtap="register">
+      注册
+      </button>
+   </view>
+</view>

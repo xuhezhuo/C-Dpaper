@@ -1,0 +1,112 @@
+<view class='container' hidden='{{!connect}}'>
+  <view class='header'>
+    <view class='flex-row all'> 
+      <view class='img-wrapper text-center' style='position: relative'>
+        <image mode='widthFix' src='{{headImg}}'></image> 
+        <button wx:if='{{headImg == "../images/head.png"}}' class='user' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取头像</button> 
+      </view>
+      <view class='title' wx:if='{{loginToken != ""}}'> 
+        <view class='company'>
+          {{buyerEnterpriseName}}
+          <button class='class-btn'>{{levelName}}</button>
+        </view>
+        <view class='integration'>
+          积分: {{currentPoint ? currentPoint : '0' }}
+        </view>
+        <view class='account'>
+          账号登录: {{cellphone}}
+        </view>
+      </view>
+      <view class='title2' wx:if='{{loginToken == ""}}'> 
+        <view>
+          <text bindtap='login'>未登录</text>        
+        </view>  
+        <view>
+          <button class='color-default' bindtap='login'>登录</button>
+        </view>      
+      </view>      
+    </view>
+    <view class='kind flex-row'>
+      <view class='col-25 border-r text-center' bindtap='openConfirmWin'>
+        <view class='amount'>
+          {{unConfirm}}
+        </view>
+        <view>待确认</view>
+      </view>
+      <view class='col-25 border-r text-center' bindtap='openPayWin'>
+        <view class='amount'>
+          {{unPay}}
+        </view>
+        <view>待付款</view>
+      </view>
+      <view class='col-25 border-r text-center' bindtap='openCartWin'>
+        <view class='amount'>
+          {{cartSize}}
+        </view>
+        <view>购物车</view>
+      </view>
+      <view class='col-25 text-center' bindtap='openMsgWin'>
+        <view class='amount'>
+          {{msgSize}}
+        </view>
+        <view>消息</view>
+      </view>
+    </view>
+  </view> 
+</view>
+
+<view class='item-list'>
+  <view class='item' bindtap='openOrderWin'>
+    <image class='logo' mode='widthFix' src='../images/book2.png' style='width:26rpx;'></image>
+    <text>我的订单</text>
+    <image class='arrow' src='../images/arrow-r.png'></image>    
+  </view>
+  <view class='item' bindtap='openPersonalWin'>
+    <image class='logo conversation' mode='widthFix' src='../images/conversation2.png'></image>
+    <text>我的信息</text>
+    <image class='arrow' src='../images/arrow-r.png'></image>
+  </view>
+   <view class='item' bindtap='openAddressWin'>
+    <image class='logo location' mode='widthFix' src='../images/location2.png'></image>
+    <text>我的地址</text>    
+    <image class='arrow' src='../images/arrow-r.png'></image>    
+  </view>
+   <view class='item' bindtap='openCollectionWin'>
+    <image class='logo' mode='widthFix' src='../images/star-2.png'></image>
+    <text>我的收藏夹</text>  
+    <image class='arrow' src='../images/arrow-r.png'></image>      
+  </view>
+   <view class='item' bindtap='openRedpackageWin'>
+    <image class='logo redpackage' mode='widthFix' src='../images/redpackage2.png' style='width:26rpx;'></image>
+    <text>我的现金红包</text> 
+    <image class='arrow' src='../images/arrow-r.png'></image>       
+  </view>
+   <view class='item' bindtap='openCouponWin'>
+    <image class='logo' mode='widthFix' src='../images/tag2.png'></image>
+    <text>我的优惠券</text> 
+    <image class='arrow' src='../images/arrow-r.png'></image>       
+  </view>
+  <view class='item flex-row'>
+      <image class='logo' style='margin-right: 6rpx; top: 25rpx;' mode='widthFix' src='../images/smile.png'></image>    
+      <button  class='contact' open-type="contact">联系客服</button>    
+      <image class='arrow' src='../images/arrow-r.png'></image>
+  </view>
+   <view class='item' bindtap='openAboutWin'>
+    <image class='logo' mode='widthFix' src='../images/earth2.png'></image>
+    <text>关于纸源网</text> 
+    <image class='arrow' src='../images/arrow-r.png'></image>       
+  </view>
+
+  <view class='btn-wrapper' wx:if='{{loginToken != ""}}'>
+    <button class='btn' bindtap='logout'>退出登录</button>
+  </view>
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

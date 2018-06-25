@@ -1,0 +1,91 @@
+<view class='container border-t' hidden='{{!connect}}'>
+  <radio-group class="radio-group {{ dataList.length == 0 ? '' : 'pb'}}" bindchange="radioChange" wx:if='{{dataList.length != 0}}'>
+    <view class='item' wx:for='{{dataList}}' wx:key='{{index}}'>
+      <view class='company flex-row'>
+        <radio color='#a53f35' value="{{item.id}}" checked="{{item.id == cartID}}" />
+        <image src='../images/shop.png'></image>
+        <text>{{item.supplierName}}</text>
+      </view>
+      <view class='content border-t' wx:for='{{item.items}}' wx:key='{{index}}' wx:for-item='product'>
+        <view class='flex-row name'>
+          <view class='col-70'>
+            <text>{{product.productName}}</text>
+          </view>
+          <view class='col-30 text-right'>
+            <image data-cartid='{{item.id}}' data-orderid='{{product.id}}' class='bin' mode='widthFix' src='../images/bin.png' bindtap='del'></image>
+          </view>
+        </view>
+        <view class='alert' wx:if='{{product.moved}}'>
+          <text class='text-red'>注：该商品已下架，请点击删除！</text>
+        </view>
+        <view class='flex-row price-wrapper'>
+          <view class='col-80'>
+            <text class='color-default'>单价：<text class='price'>¥ {{product.salePrice}}</text></text>
+            <text class='oldPrice' wx:if='{{product.discount != 0}}'>¥ {{product.price}}</text>
+          </view>
+          <view class='col-20 cut'>
+            <text data-cartid='{{item.id}}' data-orderid='{{product.id}}' wx:if='{{product.canCut}}' data-max='{{product.storage.quantity}}' bindtap='cut'>编辑分切</text>
+          </view>
+        </view>
+        <view class='amount border-b'>
+          <view wx:if='{{product.unitName == "吨"}}'>
+            <text>数量：{{product.quantity}}吨</text>
+          </view>
+          <view wx:else>
+            <view>
+              <text wx:if='{{product.unitName == "件"}}'>件重：{{product.units[0].rate}}</text>
+              <text wx:if='{{product.unitName == "令"}}'>令重：{{product.units[1] ? product.units[1].rate : ''}}</text>
+            </view>
+            <view class='inline'>
+              <text>数量：</text>
+              <input class='text-center' value="{{product.quantity}}" type='number' class='input text-center' data-cartid='{{item.id}}' data-orderid='{{product.id}}' data-unitid='{{product.unitId}}' bindblur='setQuant'></input>
+              <view wx:for='{{product.units}}' wx:for-item='units' wx:key='{{index}}' class='piece text-center {{product.unitName == units.unitName ? "active" : ""}}' data-cartid='{{item.id}}' data-orderid='{{product.id}}' data-quantity='{{product.quantity}}' data-Aquantity='{{product.quantity}}'
+                data-unitid='{{units.id}}' wx:if='{{units.unitName != "吨"}}' bindtap='setUnit'>{{units.unitName}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='total text-right'>
+          小计：
+          <text class='price color-default'>¥ {{product.amount}}</text>
+        </view>
+      </view>
+    </view>
+  </radio-group>
+
+  <view class='totalPrice flex-row' wx:if='{{dataList.length != 0}}'>
+    <view class='count col-70 border-t'>
+      合计：
+      <text class='price color-default'>¥{{totalPrice}}</text>
+    </view>
+    <view class='next col-30 text-center' bindtap='buy'>
+      下一步
+    </view>
+  </view>
+
+</view>
+
+<view wx:if='{{dataList.length == 0 && loading && loginToken != "" }}' class='empty text-center'>
+  <image mode='widthFix' src='../images/empty.png'></image>
+  <view class='notice'>
+    <text>购物车是空的哦~</text>
+  </view>
+</view>
+
+<view wx:if='{{loginToken == "" }}' class='unLogin text-center'>
+  <view>
+    <image mode='widthFix' src='../images/cart_unLogin.png'></image>
+  </view>
+  <view class='noLogin'>
+    <text>未登录</text>
+  </view>
+  <button bindtap='login'>登录</button>
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

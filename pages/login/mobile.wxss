@@ -1,0 +1,80 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  /* height: 600rpx; */
+  border-top: solid #e6e6e6 1rpx;
+}
+/*每行样式  */
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: solid #e6e6e6 1rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding-top: 7rpx;
+  padding-bottom: 7rpx;
+}
+/*第一行输入框样式  */
+.content .telephone{
+  height: 60rpx;
+  width: 100%;
+}
+/*第二行输入框样式  */
+.content .code{
+  height: 60rpx;
+  width: 500rpx;
+}
+/*输入框文字样式  */
+.ph{
+  color:#999999;
+  font-weight: 300;
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+/*验证码  */
+.send{
+  height: 65rpx;
+  width: 200rpx;
+  border-left: solid #e6e6e6 1rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 70rpx;
+  color: #b45e5c;
+  font-weight: 300;
+}
+/*条款  */
+.tiaokuan{
+  width: 600rpx;
+  margin-top: 30rpx;
+  margin-left: 130rpx;
+  font-size: 24rpx;
+  color:#999999;
+  font-weight: 300;
+
+}
+/*选择框  */
+.checkbox1{
+  zoom:0.5;
+  position: relative;
+  top: -8rpx;
+}
+/*条款红色字体  */
+.red{
+  display:inline;
+  color:#A53F35;
+  }
+/*注册  */
+.confirm{
+  width: 600rpx;
+  height: 80rpx;
+  border-radius: 20rpx;
+  font-size: 36rpx;
+  margin: 80rpx;
+  background: #A53F35; 
+  color: white;
+  line-height: 80rpx;
+  font-weight: 300;
+}

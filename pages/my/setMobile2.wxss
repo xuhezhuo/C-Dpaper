@@ -1,0 +1,68 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 600rpx;
+  border-top: solid #E5E5E5 1rpx;
+  
+}
+/*标题-验证新手机号  */
+.title{
+   height: 40rpx;
+   text-align: center;
+   line-height: 40rpx;
+   font-weight: 300;
+   margin-top: 30rpx;
+   font-size: 34rpx;
+   
+}
+/* 每一行样式 */
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: solid #E5E5E5 1rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  
+}
+/*第一行输入文字框样式  */
+.content .text1{
+  height: 60rpx;
+  width: 100%;
+}
+/*第二行输入文字框样式  */
+.content .text2{
+  height: 60rpx;
+  width: 420rpx;
+}
+/*每个输入框字体样式  */
+.ph{
+  color:#999999;
+  font-weight: 300;
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+/*第二行-发送验证码样式  */
+.code{
+  height: 65rpx;
+  width: 200rpx;
+  border-left: solid #E5E5E5 1rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 65rpx;
+  color: #A53F35;
+  font-weight: 300;
+}
+/*确认修改按钮样式  */
+.confirm{
+  width: 607rpx;
+  height: 89rpx;
+  font-size: 36rpx;
+  border-radius: 20rpx;
+  margin: 80rpx;
+  background: #A53F35; 
+  color: #FFFFFF;
+  font-weight: 300;
+}

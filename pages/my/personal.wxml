@@ -1,0 +1,38 @@
+<view class='container' hidden='{{!connect}}'>
+  <!-- 头像  -->
+   <view class='box1'>
+       <text class='title'>头像</text>
+       <image mode='widthFix' src='{{headImg}}'></image>
+   </view>
+  <!-- 姓名 -->
+   <view class='box2 pd'>
+       <text class='title'>姓名</text>
+       <view class='name'>{{realName}} 
+       </view>
+   </view>
+  <!-- 公司名  -->
+   <view class='box2 pd'>
+       <text class='title'>公司名</text>
+       <view class='name'>{{buyerEnterpriseName}}  
+       </view>
+   </view>
+  <!-- 绑定手机号  -->
+   <view class='box2' bindtap='setMobile'>
+       <text class='title'>绑定手机号</text>
+       <view class='name'>{{cellphone}} <image src='../images/arrow-r.png'></image></view>
+   </view>
+  <!-- 修改密码  -->
+   <view class='box2' bindtap='setPwd'>
+       <text class='title'>修改密码</text>
+       <view class='name'> <image src='../images/arrow-r.png'></image></view>
+   </view>
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

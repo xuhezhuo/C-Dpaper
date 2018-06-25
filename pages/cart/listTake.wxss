@@ -1,0 +1,113 @@
+.container{
+  border-top: solid 1rpx #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 300;
+  background-color: #f8f8f8;
+}
+
+/*每行样式 */
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; 
+  margin-bottom: 21rpx;
+  padding-top: 21rpx;
+  padding-bottom: 21rpx;
+}
+
+/*每行图片大小  */
+.content image{
+  width: 30rpx;
+  height: 32rpx;
+  margin-left: 50rpx;
+}
+
+/*每行信息模块  */
+.information{
+  height: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+/* 司机姓名样式 */
+.information_name{
+  font-size: 30rpx;
+  color: #232323;
+}
+
+/*司机车船样式  */
+.information_car{
+   font-size: 26rpx;
+}
+
+/*电话号码样式  */
+.number{
+  height: 75%;
+  width: 200rpx;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 65rpx;
+}
+
+/*底部样式  */
+.foot{
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  border-top: solid #a53f35 1rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+/*取消  */
+.add{
+  flex: 1;
+  text-align: center;
+  line-height: 100rpx;
+  color: #a53f35;
+}
+/*确认  */
+.manage{
+  flex: 1;
+  background-color: #a53f35;
+  text-align: center;
+  line-height: 100rpx;
+  color: #FFFFFF;
+}
+
+checkbox .wx-checkbox-input{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: none;
+   background: #a53f35;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx;
+   color:#fff;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+
+.radio{
+  transition: .1s;
+}

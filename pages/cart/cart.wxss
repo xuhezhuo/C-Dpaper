@@ -1,0 +1,201 @@
+.container{
+  background-color: #f7f7f7;
+}
+
+.pb{
+  padding-bottom: 87rpx;  
+}
+
+.item{
+  background-color: #fff;
+  margin-bottom: 32rpx;
+  padding-left: 24rpx;
+}
+
+.item .company{
+  font-size: 30rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  /* font-weight: 300; */
+  color: rgba(0, 0, 0, 0.91);
+  /* border-bottom: solid 1rpx rgba(210, 210, 210, 0.69); */
+}
+
+.company image{
+  width:36rpx;
+  padding-left:16rpx;
+  padding-right:16rpx;
+  position:relative;
+  top:17rpx;
+  height:36rpx;
+}
+
+.company radio{
+  position:relative;
+   top:-4rpx; 
+}
+
+.content{
+  padding: 12rpx;
+  font-size: 27rpx;
+  padding-left: 42rpx; 
+  padding-bottom: 0; 
+  font-weight: 300;   
+}
+
+.item:last-child .content{
+  border-bottom: none;
+}
+
+.bin{
+  width: 32rpx;
+  margin-right: 32rpx;
+  margin-top: 7rpx;
+}
+
+.name{
+  color: rgba(0, 0, 0, 0.91);
+}
+
+.input{
+  width: 98rpx;
+  border: solid 1rpx #ccc;
+  margin-right: 21rpx;
+  height: 48rpx;
+}
+
+.inline view,.inline input{
+  display: inline-block;
+}
+
+.inline{
+  margin-top: 7rpx;
+  line-height: 48rpx;
+}
+
+.price-wrapper{
+  /* margin-top: 12rpx; */
+}
+
+.amount{
+  /* margin-top: 12rpx; */
+  padding-bottom: 12rpx;
+}
+
+.price-wrapper .color-default{
+  margin-right: 32rpx;
+}
+
+.price{
+  font-size: 34rpx;
+}
+
+.oldPrice{
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.cut{
+  color: #666;
+  font-size: 26rpx;
+}
+
+.amount{
+  color: #666;
+}
+
+.piece , .ream{
+  background-color: #fff;
+  border: solid 1rpx #a53f35;
+  color: #a53f35;
+  width: 108rpx;
+   position: relative; 
+   top: 2rpx; 
+}
+
+.piece.active , .ream.active{
+  background-color: #a53f35;
+  color: #fff;
+}
+
+.total{
+  font-size: 26rpx;
+  color: #666;
+  line-height: 84rpx;
+  padding-right: 15rpx;
+}
+
+.totalPrice{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 104rpx;
+  line-height: 104rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+
+.count{
+  padding-left: 32rpx;
+  color: #666;
+}
+
+.next{
+  color: #fff;
+  background-color: #a53f35;
+}
+
+.empty{
+  margin-top: 36%;
+}
+
+.empty image{
+  width: 210rpx;
+}
+
+.notice{
+  margin-top: 16rpx;
+}
+
+.notice text{
+  font-size: 36rpx;
+  color: #666;
+}
+
+.unLogin{
+  width: 100%;
+  height: 100%;
+  padding-top: 42%;
+}
+
+.unLogin image{
+  width: 180rpx;
+  margin-right: 32rpx;
+}
+
+.noLogin{
+  margin-top: 12rpx;
+  margin-bottom: 12rpx;
+  color: #ccc;
+  font-size: 32rpx;
+}
+
+.unLogin button{
+  display: unset;
+  padding: 12rpx 84rpx;
+  color: #fff;
+  /* border: solid 1rpx #a53f35; */
+  background-color: #a53f35;
+  font-weight:300;
+  box-shadow: 2rpx 2rpx #f7f7f7;
+  border-radius: 16rpx;
+}
+
+.unLogin button::after{
+  border: none
+}
+
+.alert{
+  color: #E71C21;
+}
+

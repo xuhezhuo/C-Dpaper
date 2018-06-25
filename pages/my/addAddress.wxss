@@ -1,0 +1,67 @@
+.item{
+  font-size: 34rpx;
+  padding: 27rpx 14rpx 24rpx 14rpx;
+  font-weight: 300;
+}
+
+input{
+  padding-top: 7rpx;
+}
+
+.btn-wrapper{
+  margin-top: 64rpx;
+  text-align: center;
+}
+
+.btn{
+  display: unset;
+  padding: 27rpx 280rpx;
+  color: #fff;
+  background-color: #a53f35;
+  border-radius: 19rpx;
+  font-weight: 300;
+}
+
+button::after{
+  border: none;
+}
+
+
+.address{
+   padding: 27rpx 21rpx; 
+}
+
+picker{
+  border: solid 1rpx #ccc;
+  width: 78%;
+  font-size: 28rpx;
+  font-weight: 300;
+  position: relative;
+  padding-right: 24rpx;
+} 
+
+.picker{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  line-height: 64rpx;
+}
+
+.arrow2{
+  width: 27rpx;
+  /* margin-left: 16rpx; */
+  position: absolute;
+  top: 18rpx;
+  right: 7rpx;
+}
+
+textarea{
+  width: 100%;
+  height: 150rpx;
+  /* border: solid 1rpx #ccc; */
+}
+
+.xxdz{
+  position: relative;
+  top: 10rpx;
+}

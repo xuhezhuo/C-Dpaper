@@ -1,0 +1,185 @@
+ /* pages/my/my.wxss */
+ .container{
+  background-color: #f8f8f8;
+}  
+
+.header{
+  width: 90%;
+  margin: auto;
+  border-radius: 12rpx;
+  background-color: #fff;
+  margin-top: 29rpx;
+  margin-bottom: 29rpx;
+  padding: 16rpx;
+}
+
+.img-wrapper{
+  width: 25%;
+  padding: 6rpx;
+} 
+
+.img-wrapper image{
+  width: 160rpx;
+  height: 160rpx; 
+  border-radius: 50%;
+  margin-top: 21rpx;
+  /* max-height:130rpx; */
+}
+
+.title{
+  padding: 12rpx;
+  width: 75%;
+  padding-left:24rpx;
+}
+
+.company{
+  font-size: 34rpx;
+  font-weight: 400;
+}
+
+.integration{
+  font-size: 27rpx;
+  color: #ccc;
+  font-weight: 300;
+}
+
+.account{
+  margin-top: 18rpx;
+  font-size: 30rpx;
+  font-weight: 300;  
+}
+
+.class-btn{
+  font-size: 14rpx;
+  padding: 7rpx 13rpx;
+  background-color: #e5e5e5;
+  position: relative;
+  top: -5rpx;
+  display: unset;
+  border-radius: 7rpx; 
+}
+
+button::after{
+  border: none;
+}
+
+.kind{
+  font-size: 28rpx;
+  margin-top: 24rpx;
+  font-weight: 400;
+  margin-bottom: 12rpx;
+}
+
+.kind .amount{
+  margin-bottom: 6rpx;
+}
+
+.item-list{
+  border-top: solid 1rpx rgba(120,120,120,0.45);
+  margin-bottom: 32rpx;
+}
+
+.item{
+  padding-top: 12rpx;
+  padding-bottom: 12rpx;
+  padding-left: 24rpx;
+  border-bottom: solid 1rpx #ccc;
+  height: 74rpx;
+  position: relative;
+}
+
+.item text{
+  font-size: 32rpx;
+  line-height: 74rpx;
+  font-weight: 300;
+}
+
+.logo{
+  width: 30rpx;
+  position: relative;
+  top: 4rpx;
+  margin-right: 32rpx;
+}
+
+.conversation{
+  width: 32rpx;
+}
+
+.location, .redpackage{
+  width: 28rpx;
+}
+
+.arrow{
+  position:absolute;
+  right:24rpx;
+  height:30rpx;
+  width:15rpx;
+  top:36rpx;
+}
+
+.btn-wrapper{
+  margin-top: 64rpx;
+  text-align: center;
+}
+
+.btn{
+  display: unset;
+  padding: 27rpx 280rpx;
+  color: #fff;
+  background-color: #a53f35;
+  border-radius: 19rpx;
+  font-weight: 300;
+}
+
+button::after{
+  border: none;
+}
+
+.title2{
+  padding: 12rpx;
+  width: 75%;
+  padding-left:24rpx;
+  padding-top: 28rpx; 
+  /* font-weight:300; */
+  font-size:42rpx;
+}
+
+.title2 button{
+  display: unset;
+  padding: 4rpx 32rpx;
+  border: solid 1rpx #a53f35;
+  background-color: #fff;
+  font-size: 30rpx;
+  font-weight: 300;
+  border-radius: 7rpx;
+}
+
+.title2 button::after{
+  border: none;
+}
+
+.contact{
+  display: unset;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  background-color: #fff;
+  font-size: 32rpx;
+  font-weight: 300;
+}
+
+button::after{
+  border: none;
+}
+
+.user{
+  display:unset;
+  font-size:24rpx;
+  position:absolute;
+  left: 31rpx;
+  bottom: 20rpx;
+  color:#fff;
+  background-color:#ccc;
+  padding: 1rpx 9rpx;
+  line-height:40rpx;
+}

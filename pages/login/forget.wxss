@@ -1,0 +1,64 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 600rpx;
+  border-top: solid #e6e6e6 1rpx;
+  font-weight: 300;
+}
+/*每行样式  */
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 172rpx;
+  border-bottom: solid #e6e6e6 1rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+/*第一、三、四行输入框  */
+.content .telepohone,.content .newpassword,.content .confirmPassword{
+  width: 100%;
+  height: 60rpx;
+ 
+}
+/*第二行输入框  */
+.content .code{
+  height: 60rpx;
+  width: 500rpx;
+} 
+  
+/* 输入框文字 */
+.ph{
+  color:#999999;
+  font-weight: 300;
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+/*验证码  */
+.send{
+  height: 60rpx;
+  width: 200rpx;
+  border-left: solid #e6e6e6 1rpx;
+  font-size: 27rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #A53F35;
+
+}
+/*按钮模块  */
+.anniu{
+  height: 250rpx;
+  
+}
+/*按钮样式  */
+.confirm{
+  width: 607rpx;
+  height: 88rpx;
+  border-radius: 20rpx;
+  font-size: 36rpx;
+  margin: 80rpx;
+  background: #a83e38;
+  color: white;
+  line-height: 80rpx;
+}

@@ -1,0 +1,88 @@
+<view class="container" hidden='{{!connect}}'>
+  <!-- 轮播图  -->
+  <view class='swiper'>
+    <swiper autoplay="true" interval="5000" duration="1000">
+       <block wx:for="{{imgList}}" wx:key='{{index}}'>
+        <swiper-item>
+          <image mode='widthFix' src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>    
+    </swiper> 
+  </view> 
+
+  <!-- 公司介绍 -->
+  <view class='company'>
+    <view class='brief'>
+      <view class='logo'>
+        <image src='../images/logo.png'></image>
+      </view>
+      <view class='mention'>
+        <view>
+          <text class='title'>{{name}}</text>
+        </view>
+        <view class='contact'>
+          <view class='name' wx:if='{{contacts != ""}}'>
+            <text>{{contacts}}</text>
+          </view>
+          <view class='mobile'>
+            <image class='phone' src='../images/phone.png'></image>
+            <text bindtap='call'>{{phone}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='arrow'>
+        <image bindtap='check' class='{{ check ? "active" : "" }}' src='../images/arrow.png'></image>
+      </view>
+    </view>
+    <view class='description' style='text-indent:21rpx;' wx:if="{{check}}">
+      <text decode="{{true}}" space='true'>
+      <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        {{introduction}}
+      </text>
+      <text decode="{{true}}" space='true'>
+      <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        地址：{{address}}
+      </text> 
+    </view>
+
+  <!-- <view>
+   <button bindtap='scan'>扫描</button>
+  </view> -->
+
+  </view>
+   <view class='search'>
+      <input bindconfirm='search' confirm-type="search" placeholder-class="placeholder" placeholder='例：铜纸板 长鹤 200(关键词用空格隔开)'></input>
+    </view>
+  <!-- 仓库 -->
+  <view class='item-wrapper'>
+    <view class='item' wx:for='{{dataList}}' wx:key='{{index}}'> 
+      <view class='title'>
+        <text data-warehouse='{{item.warehouse}}' bindtap='searchClick1'>{{item.warehouse}}</text>
+      </view>
+      <view wx:for='{{item.goods}}' wx:for-item='goods' wx:key='{{index}}'>
+        <view class='type text-center'>
+          <text data-warehouse='{{item.warehouse}}' data-category='{{goods.category}}' catchtap='searchClick2'>{{goods.category}}</text>
+        </view>
+        <view class='content flex-row' wx:for='{{goods.contents}}' wx:for-item='content' wx:key='{{index}}'>
+          <view class='category col-25'>
+            <text data-warehouse='{{item.warehouse}}' data-category='{{goods.category}}' data-gname='{{content.gname}}' catchtap='searchClick3'>{{content.gname}}</text>
+          </view> 
+          <view class='select col-75'>
+              <text data-warehouse='{{item.warehouse}}' wx:for='{{content.brands}}' wx:for-item='brand' data-brand='{{brand}}' wx:key='{{index}}'catchtap='searchClick4'>{{brand}}</text>
+          </view>  
+        </view>
+      </view>
+    </view> 
+    
+  </view>
+
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

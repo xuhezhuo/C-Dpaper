@@ -1,0 +1,48 @@
+<view class='container border-t' hidden='{{!connect}}'>
+  <view class='tabBar flex-row text-center border-b'>
+    <view class='col-50 tab {{ 0 == active ? "active" : "" }}' bindtap='tab' data-tab='0'>
+      未使用
+    </view>
+    <view class='col-50 tab {{ 1 == active ? "active" : "" }}' bindtap='tab' data-tab='1'>
+      已过期
+    </view>
+    <view class='border' style='left: {{left}}rpx'></view>
+  </view>
+  <!-- 订单列表  -->
+  <view class='item-wrapper'>
+    <view class='item' wx:for='{{dataList}}' wx:key="{{index}}">
+      <view class='type border-b color-default'>
+        类型：{{item.gainReason}}
+      </view>  
+      <view class='detail flex-row'>
+        <view class='col-70 text-left'>
+          <view class='start'>生效时间{{item.effectDate}}</view>
+          <view class='end'>有效期至{{item.expireDate}}</view>          
+        </view>
+        <view class='col-30 text-right'>
+          <view class='color-default wrap'>
+            <text class='price'>{{item.cashStamp}}</text>
+          </view>
+          <view class='remain'>剩余{{item.remain}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+   <!-- 列表为空提示  -->
+   <view wx:if='{{dataList.length == 0}}' class='empty text-center'>
+    <image mode='widthFix' src='../images/empty.png'></image>
+    <view class='notice'>
+      <text>暂无红包哦~</text>
+    </view>
+  </view>  
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

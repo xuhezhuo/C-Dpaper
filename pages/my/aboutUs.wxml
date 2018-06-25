@@ -1,0 +1,98 @@
+<view class='container text-center'>
+  <view class='brief text-left'>
+    <text>纸源网是中国纸张行业领先的B2B电子商务服务平台，致力为纸张行业上下游企业提供更为便捷高效的网上交易服务和综合解决方案。</text>
+  </view>
+  <view class='brief text-left'>
+    <text>纸源网依托互联网技术，实现下游采购商，上游供应商和纸厂之间的高速供应链协同，推进纸张行业阳光采购的进程；以现代化、集成化的专业服务整合物流、商流、信息流和资金流，推动纸张市场的流动性；集成中国金融认证中心电子签名服务，保障交易结算的有效性和安全性。纸源网正全力打造纸张市场运作的规范性，推进行业规范健康持续发展。</text>
+  </view>
+
+  <view class='service flex-row' style='margin-top: 32rpx;'>
+    <view class='item col-50 text-center'>
+      <view>
+        <text class='title'>网上交易服务</text>
+      </view>
+      <view>
+        <text>在线检索商品目录</text>
+      </view>
+      <view>
+        <text>跟踪订单的履行情况</text>
+      </view>
+      <view>
+        <text>在线询价和提交订单</text>
+      </view>
+      <view>
+        <text>查看商品报价和库存</text>
+      </view>
+    </view>
+
+    <view class='item col-50 text-center'>
+      <view>
+        <text class='title'>电子认证服务</text>
+      </view>
+      <view>
+        <text>中国金额认证中心认证</text>
+      </view>
+      <view>
+        <text>提供订单电子签名</text>
+      </view>
+      <view>
+        <text>提供对账单电子签名</text>
+      </view>
+      <view>
+        <text>提供收货单电子签名</text>
+      </view>
+    </view>
+  </view>
+
+    <view class='service flex-row'>
+    <view class='item col-50 text-center'>
+      <view>
+        <text class='title'>供应商入驻服务</text>
+      </view>
+      <view>
+        <text>提供第三方仓储服务</text>
+      </view>
+      <view>
+        <text>提供商品发布和销售</text>
+      </view>
+    </view>
+
+    <view class='item col-50 text-center'>
+      <view>
+        <text class='title'>供应链金融服务</text>
+      </view>
+      <view>
+        <text>提供银行资金服务</text>
+      </view>
+      <view>
+        <text>提供第三方金融机构资金服务</text>
+      </view>
+    </view>
+  </view>
+
+    <view class='service flex-row'>
+    <view class='item col-50 text-center'>
+      <view>
+        <text class='title'>数据交换服务</text>
+      </view>
+      <view>
+        <text>提供纸厂、供应商系统互联服务</text>
+      </view>
+      <view>
+        <text>提供客户系统互联服务</text>
+      </view>
+    </view>
+
+    <view class='item col-50 text-center'>
+      <view>
+        <text class='title'>其他配套服务</text>
+      </view>
+      <view>
+        <text>手机平台、微信平台服务</text>
+      </view>
+      <view>
+        <text>支持短信、邮件、站内消息等多种消息通知</text>
+      </view>
+    </view>
+  </view>
+</view>

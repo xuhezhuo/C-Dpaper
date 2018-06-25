@@ -1,0 +1,334 @@
+<view class='container border-t {{usingStamp ? "noscroll" : ""}}' hidden='{{!connect}}'>
+  <view class='tabBar flex-row text-center border-b'>
+    <view class='col-50 tab {{ 0 == active ? "active" : "" }}' bindtap='tab' data-tab='0'>
+      客户自提
+    </view>
+    <view class='col-50 tab {{ 1 == active ? "active" : "" }}' bindtap='tab' data-tab='1'>
+      供方协助物流
+    </view>
+    <view class='border' style='left: {{left}}rpx'></view>
+  </view>
+
+  <!-- 客户自提  -->
+  <view class='selfTaking border-b' hidden='{{active == 1}}' bindtap='selfTake'>
+    <view class='flex-row'>
+      <view class='col-50'>
+        司机名称：{{driverName ? driverName : '未选择'}}
+      </view>
+    </view>
+    <view>
+      联系电话：{{buyertelephone ? buyertelephone  : '未选择'}}
+    </view>
+    <view>
+      车、船号：{{vehicleNo ? vehicleNo : '未选择'}}
+    </view> 
+    <image style='top:74rpx;' class='arrow' mode='widthFix' src='../images/arrow-r.png'></image>
+  </view>
+
+  <!-- 供方协助物流 -->
+  <view class='helpTaking border-b' hidden='{{active == 0}}' bindtap='helpTake'>
+    <view>
+      地址：{{address ? address : '未选择'}}
+    </view>
+    <view>
+      联系人：{{linkman ? linkman : '未选择'}}
+    </view>
+     <view>
+      联系电话：{{telephone ? telephone : '未选择'}}
+    </view> 
+    <view>
+      客户名称：{{clientName ? clientName : '未选择'}}
+    </view>
+    <image class='arrow' mode='widthFix' src='../images/arrow-r.png'></image>
+  </view>
+
+  <view class='assume'>
+    <view class='inline flex-row'>
+      <view class='col-30'>
+        <text class='for'>运费承担方：</text>      
+      </view>
+      <view class='col-70'>
+        <view class='option {{ shipExpenseMode ? "active" : ""}}' data-type='1' bindtap='setShipExpenseMode'>客户承担</view>
+        <view class='option {{ !shipExpenseMode ? "active" : ""}}' data-type='2' bindtap='setShipExpenseMode' style='{{ active == 0 ? "background-color: #666;border: solid 1rpx #666;color:#fff;" : "" }}'>供方承担</view>    
+      </view>
+    </view>
+
+    <view class='inline flex-row'>
+      <view class='col-30'>
+        <text class='for'>装卸费承担方：</text>      
+      </view>
+      <view class='col-7'>
+        <view class='option {{ carryExpenseMode == "01" ? "active" : ""}}' data-type='01' bindtap='setCarryExpenseMode' style='{{ !canEditCarryExpenseMode&&carryExpenseMode != "01" ? "background-color: #666;border: solid 1rpx #666;color:#fff;" : "" }}'>客户承担</view>
+        <view class='option {{ carryExpenseMode != "01" ? "active" : ""}}' data-type='02' bindtap='setCarryExpenseMode' style='{{ !canEditCarryExpenseMode&&carryExpenseMode == "01" ? "background-color: #666;border: solid 1rpx #666;color:#fff;" : "" }}'>供方承担</view>    
+      </view>
+    </view>
+  </view>
+
+  <view class='other'>
+    <view class='title'>
+      其他信息：
+    </view>
+    <view class='payDate'>
+      付款日期：{{payDate}}
+    </view>
+    <view class='lastDate flex-row'>
+      <view class='col-30'>
+        最迟要货日期：
+      </view>
+      <view class='col-70'>
+        <picker class='datePicker' mode="date" value="{{shipDate}}" bindchange="bindDateChange">
+          <view class="picker">
+            <text> {{shipDate}}</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='saleMan'>
+      供方业务员：{{salesManName}}
+    </view>
+    <view class='invoice flex-row'>  
+      <view class='col-25'>
+        发票抬头：
+      </view>
+      <view class='col-7'>
+        <picker class='invoicePicker' value="{{corpId}}" bindchange="bindPickerChange" range="{{corpList}}" range-key='corpName'>
+          <view class="picker">
+            <text>{{corpName}}</text>
+            <image mode='widthFix' src='../images/arrow.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class='productList' style='padding-top:21rpx;'>
+    <!-- <view class='company'> -->
+      <!-- <image mode='widthFix' src='../images/shop.png'></image> -->
+      <!-- <text>建发纸业有限公司</text> -->
+    <!-- </view> -->
+    <!-- 商品列表  -->
+    <view class='item' wx:for='{{productList}}' wx:for-item='product' wx:key='{{index}}'>
+      <view class='brief'>
+        <view class='flex-row'>
+          <view class='col-60'>
+            {{product.productName}}
+          </view>
+          <view class='col-40 text-right'>
+            <view>
+              <text class='color-default'><text wx:if='{{product.discount != 0}}'  style='margin-right:7rpx;'>直降{{product.discount}}</text> <text class='price'>¥{{product.salePrice}}</text></text>
+            </view>
+            <view>
+              <text wx:if='{{product.discount != 0}}' class='oldPrice'>¥{{product.price}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='flex-row unit'>
+          <view class='col-25'>
+            <text>单位：{{product.unitName}}</text>
+          </view>
+          <view class='col-25'>
+            <text>数量：{{product.quantity}}</text>
+          </view>
+          <view class='col-25'>
+            <text>重量：{{product.benchmarkQuantity}}</text>
+          </view>
+          <view class='col-25 text-right'>
+            <image class='arrow-d {{ product.present ? "roll" : ""}}' mode='widthFix' src='../images/arrow.png' bindtap='roll' data-index='{{index}}'></image>
+          </view>
+        </view>
+      </view>
+      <view class='productDetail' hidden='{{!product.present}}'>
+        <view class='inline flex-row cut'>
+          <view class='col-20 text-center'>
+            <text class='tap'>是否分切：</text>      
+          </view>
+          <view class='col-70'>
+            <view class='option {{product.needCut ? "active" : ""}}'>分切</view>
+            <view class='option {{product.needCut ? "" : "active"}}'>不分切</view>    
+          </view>
+        </view>
+        <!-- 分切信息 -->
+        <view class='cutdetail flex-row border-b' hidden='{{!product.needCut}}'>
+          <view class='col-20 text-center'>
+            <text class='tap'>分切明细：</text>      
+          </view>
+          <view class='col-80 flex-row cutdetail2'>
+            <text>{{product.cutDescription}}</text>
+            <!-- <view class='col-33'>
+              宽度：1200
+            </view>   
+            <view class='col-33'>
+              克重：200
+            </view> 
+            <view class='col-34'>
+              重量：0.09858
+            </view>  -->
+          </view>
+        </view>
+        <!-- 分切列表 -->
+        <view class='cutList-wrapper flex-row border-b' hidden>
+          <view class='col-10'></view>
+          <view class='cutList col-90'>
+            <view class='thead flex-row'>
+              <view class='col-33 text-center'>长度</view>
+              <view class='col-33 text-center'>张数</view>
+              <view class='col-34 text-center'>重量</view>              
+            </view>
+            <view class='tbody flex-row'>
+              <view class='col-33 text-center'>{{cut.length}}200</view>
+              <view class='col-33 text-center'>{{cut.pieces}}433</view>
+              <view class='col-34 text-center'>{{cut.weight}}0.0372</view>     
+            </view>          
+          </view>
+        </view>
+        <!-- 商品备注 -->
+        <view class='itemMarker flex-row border-b'>
+          <view class='col-20 text-center'>商品备注：</view>
+          <view class='col-80'>
+            <textarea bindblur='addNote' data-index='{{index}}' value='{{product.remark}}'></textarea>
+          </view>
+        </view>
+        <!-- 小计  -->
+        <view class='singleTotal text-right'>
+          小计：<text class='price color-default'>¥{{product.amount}}</text>
+        </view> 
+      </view>
+    </view>
+    <!-- 商品列表完毕 -->
+
+    <!-- 红包 -->
+    <view class='discount border-b'>
+      <view class='flex-row workfee'>
+        <view class='col-50 text-left'>加工服务费</view>
+        <view class='col-50 text-right'>
+          <text class='fee'>¥ {{cutServiceMoney ? cutServiceMoney : 0 }}</text>     
+        </view>        
+      </view>
+      <view class='flex-row redpackage' wx:if='{{canUseCashStamp != 0}}'>
+        <view class='col-50 text-left'>现金红包</view>
+        <view class='col-50 text-right' bindtap='useStamp'>
+          <text style='color: #626262' wx:if='{{useCashStamp == 0}}'>{{canUseCashStamp}} 可用</text>
+          <text class='color-default' wx:if='{{useCashStamp != 0}}'>-{{useCashStamp}}</text>          
+          <image class='arrow2' mode='widthFix' src='../images/arrow-r.png'></image>          
+        </view>        
+      </view>
+      <view class='flex-row'>
+        <view class='col-50 text-left'>优惠券</view>
+        <view class='col-50 text-right' bindtap='chooseCoupon'>
+          <text style='color: #626262' wx:if='{{couponsId == ""}}'>{{canUseCoupon}}张可用</text>
+          <text class='color-default' wx:if='{{couponsId != ""}}'>-{{coupons}}</text>
+          <image class='arrow2' mode='widthFix' src='../images/arrow-r.png'></image>          
+        </view>        
+      </view>
+    </view>
+
+    <!-- 统计 -->
+    <view class='count flex-row'>
+      <view class='col-25'>
+        订单成交金额
+      </view>
+      <view class='col-35 text-center'>
+        已优惠：¥{{allDiscount + useCashStamp + coupons}}
+      </view>
+      <view class='col-40 text-right price-warpper'>
+        合计：<text class='price2 color-default'>¥{{orderTotal- allDiscount - useCashStamp - coupons}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='orderMarker flex-row border-b'>
+    <view class='col-20 text-center'>订单备注：</view>
+    <view class='col-80'>
+      <textarea value='{{orderMarker}}'></textarea>
+    </view>
+  </view>
+
+  <view class='footer'>
+    <view class='count2 flex-row border-b border-t'>
+      <view class='col-25'>
+        订单成交金额
+      </view>
+      <view class='col-35 text-center'>
+        已优惠：¥{{allDiscount + useCashStamp + coupons}}
+      </view>
+      <view class='col-40 text-right price-warpper'>
+        合计：<text class='price2 color-default'>¥{{orderTotal- allDiscount - useCashStamp - coupons}}</text>
+      </view>
+    </view>
+    <view class='operation flex-row'>
+      <view class='col-25 text-center service' style='position: relative'>
+        <view class='img2'>
+          <image class='smile' src='../images/smile.png' mode='widthFix'></image>  
+        </view>   
+        <button style='position: absolute; bottom: 0;left: 0' class='contact' open-type="contact">客服</button>
+      </view>
+      <view class='col-25 text-center tel' bindtap='call'>
+        <view>
+          <image mode='widthFix' class='phone2' src='../images/phone2.png'></image>
+        </view>
+        <view>
+          电话
+        </view>
+      </view>
+      <view class='col-50 text-center submit'>
+        <form report-submit='true' bindsubmit='submit'>
+          <button form-type="submit">提交订单</button>
+        </form>
+      </view>
+    </view>
+  </view>
+
+  <view class='cover {{usingStamp ? "show" : "hidden"}}' >
+    <view class='content'>
+      <view>
+        红包余额：<text class='color-default stamp'>¥{{canUseCashStamp}}</text>
+      </view>
+      <view>
+        本单可用红包：<text class='color-default stamp'>¥{{maxCashStamp}}</text>
+      </view>
+      <view>
+        使用红包：
+        <input type='number' value='{{stamp}}' bindblur='setStamp'></input>
+        <text class='color-default useAll' bindtap='useAll'>全部使用</text>
+      </view>
+    </view>
+    <view class='operate flex-row'>
+      <view class='cancel col-33 text-center' bindtap='cancel'>
+        取消
+      </view>
+      <view class='not col-34 text-center' bindtap='not'>
+        不使用
+      </view>
+      <view class='confirm col-33 text-center' bindtap='sureStamp'>
+        确认
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- <view class='qrcode' wx:if='{{qrcode}}' bindtap='qrcode' style='height: {{height}}px;'>
+  <view class='text-center'>
+    <image catchtap='scan' mode='widthFix' src='{{service}}' data-src='{{service}}'></image>
+  </view>
+  <view class='text-center scan'>
+    <view>
+      <text>点击长按保存二维码，</text>
+    </view>
+    <view>
+      <text>在微信中扫一扫，添加客服微信好友</text>    
+    </view>
+  </view>
+</view> -->
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>
+
+
+  

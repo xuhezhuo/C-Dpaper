@@ -1,0 +1,205 @@
+<view class='container' hidden='{{!connect}}'>
+  <!-- 搜索框 -->
+  <view class='search'>
+    <input bindconfirm='search' confirm-type="search" value='{{search}}'placeholder-class="placeholder" bindinput='bindSearchName' placeholder='例：铜纸板 长鹤 200(关键词用空格隔开)'></input>
+  </view>
+
+  <!-- 导航栏 -->
+  <scroll-view scroll-x class='flex-row scroll-view'> 
+    <view bindtap='tabClick2' data-index='{{""}}' class="scroll-view-item">
+      <text class='{{ "" === active ? "active" : "" }}'>全部</text>
+    </view>
+    <view bindtap='tabClick' data-category='{{item.category}}' data-index='{{index}}' class="scroll-view-item " wx:for="{{categoryList}}" wx:key="{{index}}">
+      <text class='{{ index === active ? "active" : "" }}'>{{item.category}}</text>
+    </view> 
+  </scroll-view> 
+
+  <!-- 筛选栏 -->
+  <view class='filter flex-row border-t'>
+    <view class='brand color-default' bindtap='brandSearch'>
+      <text>品牌（{{brand ? brand : '全部'}}）</text>
+      <image class='arrow {{ search1 ? "active" : "" }}' src='../images/arrow-down.png'></image>
+    </view>  
+    <view class='weight color-default border-r' bindtap='weightSearch'>
+      <text>克重（{{gram ? gram : '全部'}}）</text>
+      <image class='arrow {{ search2 ? "active" : "" }}' src='../images/arrow-down.png'></image>      
+    </view>  
+    <view class='sec'  bindtap='filterClick'>
+      <text>筛选</text>
+      <image src='../images/filter.png'></image>
+    </view>      
+  </view>
+
+  <!-- 商品列表 -->
+  <view class='item-wrapper' style='{{ search1 || search2 || filter ? "height: 856rpx;" : "" }}'>
+    <view class='item flex-row' wx:for='{{productList}}' wx:key='{{index}}'>
+      <view class='indent'>
+      </view>
+      <view class='content'>
+         <!-- <view class='flex-row title'> 
+           <view class='company'>
+            <image src='../images/shop.png'></image>
+            <text>建发纸业有限公司</text>
+          </view> 
+          <view class='redpacket' wx:if="{{item.maxCashStamp != 0}}">
+            <image mode='widthFix' src='../images/redpacket.png'></image> 
+            <text>红包</text>
+          </view>
+        </view> -->
+        <view class='flex-row product'>
+          <view class='description'>
+            <view class='detail' bindtap='openDetailWin'  data-fullName='{{item.fullName}}' data-area='{{item.areaList[0]}}'>
+              <text>{{item.fullName}}</text>
+            </view>
+            <view class='storehouse' bindtap='openDetailWin' data-fullName='{{item.fullName}}' data-area='{{item.areaList[0]}}'>
+              仓库所在地区：<text class='cang' wx:for='{{item.areaList}}' wx:key="{{index}}">{{item}}</text>
+            </view>
+            <view class='price color-default'>
+              <text class='num' wx:if='{{loginToken == ""}}' bindtap='openLoginWin'>吨价请登录查看</text>
+              <text class='num' wx:else>{{item.minPrice}}</text>
+              <text class='offsale' wx:if="{{item.maxDiscount != 0}}">直降</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 没有更多提示 -->
+    <view class='noMore text-center' hidden='{{noMore}}'>
+      <text>没有更多了哦~</text>
+    </view>
+
+
+    <view wx:if='{{productList.length == 0 && loading }}' class='empty text-center'>
+      <image mode='widthFix' src='../images/empty.png'></image>
+      <view class='notice'>
+        <text>没有相关商品哦~</text>
+      </view>
+    </view> 
+  </view>
+
+  <!-- 品牌筛选 -->
+   <view class='border-t brandSearch {{ search1 ? "active" : "" }}' wx:if="{{search1}}"> 
+    <radio-group class="radio-group">
+      <view class='brandItem border-b' data-brand='{{""}}' bindtap='checkBrand'>
+        <text>全部</text>
+        <radio color='#a53f35' value="{{''}}"  checked='{{"" == brand }}'/>
+      </view>
+      <view class='brandItem border-b' data-brand='{{item}}' wx:for='{{brandList}}' wx:key='{{index}}' bindtap='checkBrand'>
+        <text>{{item}}</text>
+        <radio color='#a53f35' value="{{item}}"  checked='{{item == brand }}'/>
+      </view> 
+    </radio-group>
+  </view>
+
+   <!-- 克重筛选  -->
+  <view class='border-t weightSearch {{ search2 ? "active" : "" }}' wx:if="{{search2}}">
+    <radio-group class="radio-group">  
+      <view class='weightItem border-b' data-gram='{{""}}' bindtap='checkGram'>
+        <text>全部</text>
+        <radio color='#a53f35' value="{{''}}" checked='{{"" == gram }}'/>
+      </view>
+      <view class='weightItem border-b' data-gram='{{item}}' bindtap='checkGram' wx:for='{{gramList}}' wx:key='{{index}}'>
+        <text>{{item}}</text>
+        <radio color='#a53f35' value="{{item}}" checked='{{item == gram }}'/>
+      </view>
+    </radio-group>    
+  </view>
+
+  <!-- 侧边栏筛选 -->
+  <view class='cover' wx:if='{{filter}}'></view>
+  <view class='sideBar flex-row' style='{{ filter ? "width: 100%;" : "width: 0;"  }}'>
+    <view class='empty' bindtap='stopFilter'></view>
+    <view class='block' >
+      <view class='title'>
+        <text>筛选</text>
+      </view>
+      <view class='kindList'>
+        <view class='ktitle'>
+          <text>品类</text>
+        </view>
+        <view class='kContent'>
+          <view class='kItem' wx:for='{{gList}}' wx:key='{{index}}' wx:if='{{gList.length != 0}}'>
+            <button data-gory='{{item}}' class='kButton {{ item === gory ? "active" : "" }} ' bindtap='bindGory'>{{item}}</button>
+          </view>
+          <view class='none' wx:if='{{gList.length == 0}}'>
+            <text>无</text>
+          </view>
+        </view>
+      </view>
+
+      <view class='nameList'>
+      <!-- gnameList -->      
+        <view class='ntitle'>
+          <text>品名</text>
+        </view>
+        <view class='nContent'>
+          <view class='nItem' wx:for='{{gNameList}}' wx:key='{{index}}' wx:if='{{gNameList.length != 0}}'>
+            <button data-gname='{{item}}' class='nButton {{ item === gName ? "active" : "" }} ' bindtap='bindGName'>{{item}}</button>
+          </view>
+          <view class='none' wx:if='{{gNameList.length == 0}}'>
+            <text>无</text>
+          </view>
+        </view>
+      </view>
+
+      <view class='scaleList'> 
+        <view class='stitle'>
+          <text>规格</text>
+        </view>
+      </view>
+      <view class='sContent'>
+          <view class='sItem' wx:for='{{scaleList}}' wx:key='{{index}}'  wx:if='{{scaleList.length != 0}}'>
+            <button data-scale='{{item}}' class='sButton {{ item === scale ? "active" : "" }} ' bindtap='bindScale'>{{item}}</button>
+          </view>
+          <view class='none' wx:if='{{scaleList.length == 0}}'>
+            <text>无</text>
+          </view>
+      </view>
+
+      <view class='scaleList'>
+        <view class='stitle'>
+          <text>等级</text>
+        </view>
+      </view>
+      <view class='sContent'>
+          <view class='sItem' wx:for='{{levelList}}' wx:key='{{index}}' wx:if='{{levelList.length != 0}}'>
+            <button data-level='{{item}}' class='sButton {{ item === level ? "active" : "" }}' bindtap='bindLevel'>{{item}}</button>
+          </view>
+          <view class='none' wx:if='{{levelList.length == 0}}'>
+            <text>无</text>
+          </view>
+      </view>
+
+      <view class='scaleList'>
+        <view class='stitle'>
+          <text>仓库</text>
+        </view>
+      </view>
+      <view class='aContent'>
+          <view class='aItem' wx:for='{{areaList}}' wx:key='{{index}}' wx:if='{{areaList.length != 0}}'>
+            <button data-area='{{item}}' class=' {{ item === area ? "active" : "" }} aButton' bindtap='bindArea'>{{item}}</button>
+          </view>
+          <view class='none' wx:if='{{areaList.length == 0}}'>
+            <text>无</text>
+          </view>
+      </view>
+        <!-- 底部按钮 -->
+      <view class='operation flex-row'>
+          <view class='reset' bindtap='reset'>重置</view>
+          <view class='done' bindtap='finishFilter'>完成</view>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

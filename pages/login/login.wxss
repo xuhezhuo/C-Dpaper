@@ -1,0 +1,89 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-top: solid 1rpx #e6e6e6;
+}
+/*logo模块  */
+.pic{
+  width: 600rpx;
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+/*logo图片大小  */
+.pic image{
+  width: 217rpx;
+  height: 217rpx;
+ 
+}
+/*登录 密码模块样式  */
+.box{
+  width: 607rpx;
+  height: 210rpx;
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+
+}
+.box .content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: solid 1rpx #e6e6e6;
+  height: 89rpx;
+  border-radius: 20rpx;
+
+
+}
+/*input输入框样式  */
+ .content .username,.content .password{
+  height: 60rpx;
+  width: 520rpx;
+}
+/*input输入框字体样式  */
+.ph{
+  color:#999999;
+  font-weight: 300;
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+/*忘记密码 注册模块样式  */
+.tip{
+  width: 570rpx;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+
+
+}
+/*忘记密码字体样式  */
+.tip .forget{
+  font-size: 24rpx;
+  color:#999999;
+}
+/*注册字体样式  */
+.tip .register{
+  font-size: 24rpx;
+  color:#A53F35;
+}
+/*登录按钮样式  */
+.confirm{
+  width: 607rpx;
+  height: 89rpx;
+  border-radius: 20rpx;
+  font-size: 36rpx;
+  background:#A53F35;
+  color:#FFFFFF;
+  line-height: 89rpx;
+  font-weight: 300;
+  margin-top: 10rpx;
+}

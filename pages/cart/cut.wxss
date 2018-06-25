@@ -1,0 +1,100 @@
+.tabBar{
+  font-size: 28rpx;
+  line-height: 90rpx;
+  /* font-weight: 300; */
+  position: relative;
+  background-color: #fff;
+  color: #666;
+}
+
+.active{
+  color: #a53f35;
+}
+
+.border{
+  width: 72rpx;
+  height: 4rpx;
+  background-color: #a53f35;
+  position: absolute;
+  bottom: 0;
+  transition: .2s ;
+}
+
+.weight{
+  line-height: 84rpx;
+  font-size: 30rpx;  
+  color: rgba(0,0,0,0.84);
+  padding-left: 32rpx;
+}
+
+.title{
+  font-size: 28rpx;
+  padding-top: 18rpx;
+  padding-bottom: 18rpx;
+  color: #666;  
+}
+
+.pieceList{
+  font-size: 28rpx;
+  font-weight: 300;
+  color: #666;
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+  border-bottom: solid 1rpx #ccc;
+}
+
+.pieceList:first-child{
+  padding-top: 0;
+}
+
+.pieceList:nth-last-child(2){
+  border-bottom: none;
+}
+
+.pieceList input{
+  border: solid 1rpx #ccc;
+  width: 84%;
+}
+
+.bin{
+  width: 32rpx;
+   margin-right: 2rpx; 
+  /* margin-top: 7rpx; */
+}
+
+.add{
+  margin-top: 42rpx;
+}
+
+.btn{
+  display: unset;
+  padding: 21rpx 64rpx;
+  font-size: 30rpx;
+  background-color: #fff;
+  color: #666;
+}
+
+.cutweight{
+  color: #626262;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  padding-right: 27rpx;
+  padding-left: 27rpx;
+}
+
+.footer{
+  font-size: 32rpx;
+  position: fixed;
+  line-height: 104rpx;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer .cancel{
+  border-top: solid 1rpx #a53f35;
+}
+
+.footer .sure{
+  color: #fff;
+  background-color: #a53f35;
+}

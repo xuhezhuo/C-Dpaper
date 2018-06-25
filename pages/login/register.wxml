@@ -1,0 +1,26 @@
+<view class='container'>
+<!--第一行  -->
+   <view class='content'>
+      <input  placeholder-class='ph' class='text' placeholder='真实姓名' value='{{realName}}' bindinput='bindRealNameInput'></input>
+   </view>
+<!--第二行  -->
+   <view class='content'>
+      <input type='password' placeholder-class='ph' class='text' placeholder='密码' value='{{password}}' password bindinput='bindPasswordInput'></input>
+      
+   </view>
+<!--第三行  -->
+   <view class='content'>
+      <input type='password' placeholder-class='ph' class='text' placeholder='再次输入密码' value='{{pwdRepeat}}' password bindinput='bindPwdRepeatInput'></input>
+   </view>
+<!--第四行  -->
+   <view class='content'>
+      <input  placeholder-class='ph' class='text' placeholder='电子邮箱' value='{{eMail}}' bindinput='bindEMailInput'></input>
+   </view>
+<!--第五行  -->
+    <view class='content'>
+      <input  placeholder-class='ph' class='text' placeholder='企业名称' value='{{buyerEnterpriseName}}' bindinput='bindBuyerEnterpriseNameInput'></input>
+   </view>
+<!--下一步按钮  -->
+      <button class='confirm'  bindtap="Next">下一步</button>
+  
+</view>

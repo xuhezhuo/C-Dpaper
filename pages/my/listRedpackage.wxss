@@ -1,0 +1,81 @@
+page{
+   background-color: #f7f7f7; 
+}
+
+.tabBar{
+  font-size: 28rpx;
+  line-height: 90rpx;
+  /* font-weight: 300; */
+  position: relative;
+  background-color: #fff;
+}
+
+.active{
+  color: #a53f35;
+}
+
+.border{
+  width: 72rpx;
+  height: 4rpx;
+  background-color: #a53f35;
+  position: absolute;
+  bottom: 0;
+  transition: .2s ;
+}
+
+.empty{
+  margin-top: 36%;
+}
+
+.empty image{
+  width: 210rpx;
+}
+
+.notice{
+  margin-top: 16rpx;
+}
+
+.notice text{
+  font-size: 36rpx;
+  color: #666;
+}
+
+.item-wrapper{
+  background-color: #f7f7f7;
+}
+
+.item{
+  background-color: #fff;
+  margin: auto;
+  margin-top: 32rpx;
+  width: 86%;
+  padding:21rpx 27rpx;
+}
+
+.item .type{
+  width: 100%;
+  font-size: 34rpx;
+}
+
+.detail{
+  margin-top: 12rpx;  
+}
+
+.detail .start, .detail .end{
+  font-size: 26rpx;
+  line-height: 42rpx;
+  color: #626262;
+}
+
+.wrap{
+   font-size: 30rpx; 
+}
+
+.price{
+  font-size: 35rpx;
+}
+
+.remain{
+  font-size: 24rpx;
+  color: #ccc;
+}

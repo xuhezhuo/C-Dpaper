@@ -1,0 +1,141 @@
+<view class='container border-t' hidden='{{!connect}}'>
+  <view class='tabBar flex-row text-center border-b'>
+    <view class='col-50 tab {{ 0 == active ? "active" : "" }}' bindtap='tab' data-tab='0'>
+      零切
+    </view>
+    <view class='col-50 tab {{ 1 == active ? "active" : "" }}' bindtap='tab' data-tab='1'>
+      整切
+    </view>
+    <view class='border' style='left: {{left}}rpx'></view>
+  </view>
+
+  <view class='piece' hidden='{{active == 1}}'>
+    <view class='weight flex-row border-b'>
+      <view class='col-50 text-center'>
+        克重：{{gram}}
+      </view>
+      <view class='col-50 text-center'>
+        重量：{{quantity}}吨
+      </view>
+    </view>
+    <view class='title flex-row'>
+      <view class='col-20 text-center'>
+        宽度
+      </view>
+      <view class='col-20 text-center'>
+        长度
+      </view>
+      <view class='col-20 text-center'>
+        张数
+      </view>
+      <view class='col-20 text-center'>
+        重量
+      </view>
+      <view class='col-20 text-center'>
+        操作
+      </view>
+    </view>
+    <view class='pieceList flex-row' wx:for='{{pieceList}}' wx:key='{{index}}'>
+      <view class='col-20 text-center'>
+        {{width}}
+      </view>
+      <view class='col-20 text-center'>
+        <input type='number' bindblur='bindLength' data-index='{{index}}' value='{{item.length}}'></input>
+      </view>
+      <view class='col-20 text-center'>
+        <input type='number' bindblur='bindPieces' data-index='{{index}}' value='{{item.pieces}}'></input>      
+      </view>
+      <view class='col-20 text-center'>
+        {{item.quantity}}
+      </view>
+      <view class='col-20 text-center'>
+        <image data-index='{{index}}' bindtap='delpart' class='bin' mode='widthFix' src='../images/bin.png'></image>
+      </view>
+    </view>
+    <view class='add text-center'>
+      <button class='btn' bindtap='addPiece'>增加一条</button>
+    </view>
+  </view>
+
+  <view class='all' hidden='{{active == 0}}'>
+    <view class='weight flex-row border-b'>
+      <view class='col-50 text-left'>
+        克重: {{gram}}
+      </view>
+      <view class='col-50 text-left'>
+        总重量: {{cutAllQuantity}}吨
+      </view>
+    </view>
+    <!-- <view class='weight border-b'>
+      <view class='text-left'>
+        剩余重量: {{remain}}吨
+      </view>
+    </view> -->
+    <view class='title flex-row'>
+      <view class='col-20 text-center'>
+        宽度
+      </view>
+      <view class='col-20 text-center'>
+        长度
+      </view>
+      <view class='col-20 text-center'>
+        张数
+      </view>
+      <view class='col-20 text-center'>
+        重量
+      </view>
+      <view class='col-20 text-center'>
+        操作
+      </view>
+    </view>
+    <view class='pieceList flex-row' wx:for='{{allList}}' wx:key='{{index}}'>
+      <view class='col-20 text-center'>
+         {{width}}
+      </view>
+      <view class='col-20 text-center'>
+        <input type='number' bindblur='setLength' data-index='{{index}}' value='{{item.length}}'></input>
+      </view>
+      <view class='col-20 text-center'>
+        <input type='number' bindblur='setPieces' data-index='{{index}}' value='{{item.pieces}}'></input>      
+      </view>
+      <view class='col-20 text-center'>
+        {{item.quantity}}
+      </view>
+      <view class='col-20 text-center'>
+        <image data-index='{{index}}' class='bin' mode='widthFix' src='../images/bin.png' bindtap='delAll'></image>
+      </view>
+    </view>
+    <view class='cutweight flex-row'>
+      <view class='text-left col-50'>
+        剩余重量: {{remain}}吨
+      </view>
+      <view class='text-right col-50'>
+        分切重量：{{quantity2}}
+      </view>
+      
+    </view>
+    <view class='add text-center'>
+      <button class='btn' bindtap='addAll'>增加一条</button>
+    </view>
+  </view>
+
+  <view class='footer flex-row'>
+    <view class='col-50 text-center color-default border-t' bindtap='cancel'>
+      取消
+    </view>
+    <view class='col-50 text-center sure' bindtap='setting'>
+      确认
+    </view>
+  </view>
+
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>
+  

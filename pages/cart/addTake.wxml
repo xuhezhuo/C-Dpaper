@@ -1,0 +1,46 @@
+<view class='container border-t'>
+  <view class='flex-row item border-b'>
+    <view class='col-30 text-center'>
+      司机姓名：
+    </view>
+    <view class='col-70'>
+      <input value='{{name}}' bindinput='bindName'></input>
+    </view>
+  </view>
+  <view class='flex-row item border-b'>
+    <view class='col-30 text-center'>
+      车、船号：
+    </view>
+    <view class='col-70'>
+      <input value='{{car}}' bindinput='bindCar'></input>
+    </view>
+  </view>
+  <view class='flex-row item border-b'>
+    <view class='col-30 text-center'>
+      联系电话：
+    </view>
+    <view class='col-70'>
+      <input type='number' value='{{mobile}}' bindinput='bindMobile'></input>
+    </view>
+  </view>
+  <view class='flex-row item border-b'>
+    <view class='col-30 text-center'>
+      证件号码：
+    </view>
+    <view class='col-70'>
+      <input value='{{certificate}}' bindinput='bindCertificate'></input>
+    </view>
+  </view>
+  <view class='flex-row item border-b'>
+    <view class='col-30 text-center'>
+      运输公司：
+    </view>
+    <view class='col-70'>
+      <input value='{{firm}}' bindinput='bindFirm'></input>
+    </view>
+  </view>
+
+  <view class='btn-wrapper'>
+    <button class='btn' bindtap='add'>新增</button>
+  </view>
+</view>

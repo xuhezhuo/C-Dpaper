@@ -1,0 +1,79 @@
+{
+  "pages":[   
+    "pages/index/index", 
+    "pages/category/category", 
+    "pages/category/goodsdetail",    
+    "pages/cart/cart",    
+    "pages/cart/success",
+    "pages/cart/addAddress",   
+    "pages/cart/orderInfo",    
+    "pages/cart/listAddress",
+    "pages/cart/addTake",    
+    "pages/cart/listTake",    
+    "pages/cart/listCoupon",    
+    "pages/cart/cut",    
+    "pages/login/login",    
+    "pages/login/register",   
+    "pages/login/mobile",
+    "pages/login/agreement",    
+    "pages/login/forget",
+    "pages/my/my",    
+    "pages/my/msgDetail",    
+    "pages/my/listMsg",
+    "pages/my/listOrder", 
+    "pages/my/orderDetail",    
+    "pages/my/listAddress",    
+    "pages/my/listCollection",
+    "pages/my/setAddress",  
+    "pages/my/listCoupon",    
+    "pages/my/listRedpackage",    
+    "pages/my/addAddress",
+    "pages/my/setMobile1",
+    "pages/my/personal",    
+    "pages/my/setPwd", 
+    "pages/my/setMobile2",  
+    "pages/my/aboutUs",    
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "纸源商城",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#a53f35",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/home.png",
+        "selectedIconPath": "pages/images/home_active.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "pages/images/category.png",
+        "selectedIconPath": "pages/images/category_active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "pages/images/cart.png",
+        "selectedIconPath": "pages/images/cart_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "pages/images/my.png",
+        "selectedIconPath": "pages/images/my_active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

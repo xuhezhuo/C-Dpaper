@@ -1,0 +1,169 @@
+<view class='container border-t' hidden='{{!connect}}'>
+  <!-- 收货信息  -->
+  <view class='receiveM'>
+    <view class='title border-b'>
+      收货信息
+    </view>
+    <view class='customer border-b'>
+      <view>
+        客户名称：{{buyerName}}
+      </view>
+      <view wx:if='{{!shipByBuyer}}'>
+        <view>
+          联系人：{{buyerLinkman}}
+        </view>
+        <view>
+          联系电话：{{buyerTelephone}}
+        </view>
+        <view>
+          详细地址：{{buyerAddress}}
+        </view>
+      </view>
+      <view wx:if='{{shipByBuyer}}'>
+        <view>
+          司机：{{driver}}
+        </view>
+        <view>
+          车、船号：{{vehicleNumber}}
+        </view>
+        <view>
+          联系电话：{{driverTelephone}}
+        </view>
+      </view>
+      <view>
+        运费承担方：<text style='color: {{carryExpenseModeChanged == "" ? "#000" : "red"}}'>{{carryExpenseModeChanged == '' ? shipExpenseMode : carryExpenseModeChanged}}</text>
+      </view>
+      <view>
+        装卸费承担方：{{carryExpenseMode}}
+      </view>
+    </view>
+    <view class='order'>
+      <view class='table'>
+        <view class='thead flex-row bd'>
+          <view class='col-25 padding text-center br'>商品</view>
+          <view class='col-25 padding text-center br'>数量</view>
+          <view class='col-25 padding text-center br'>价格</view>
+          <view class='col-25 padding text-center'>小计</view>  
+        </view> 
+        <view class='tbody flex-row bd' wx:for='{{productList}}' wx:key="{{index}}">
+          <view class='col-25 padding text-center br'>{{item.productFullName}}</view>
+          <view class='col-25 padding top text-center br' style='color: {{item.lineAmountChanged == "" ? "" : "red"}}'>{{item.lineAmountChanged == '' ? item.lineAmount : item.lineAmountChanged}}</view>
+          <view class='col-25 padding top text-center br' style='color: {{item.priceChanged == "" ? "" : "red"}}'>{{item.priceChanged == '' ? item.price : item.priceChanged }}</view>
+          <view class='col-25 padding top text-center' style='color: {{item.lineTotalChanged == "" ? "" : "red"}}'>¥{{item.lineTotalChanged == '' ?item.lineTotal : item.lineTotalChanged}}</view>  
+        </view>  
+        <view class='tfoot flex-row bd'>
+          <view class='col-25 padding text-center br'>合计</view>
+          <view class='col-25 padding text-center br'></view>
+          <view class='col-25 padding text-center br'></view>
+          <view class='col-25 padding text-center' style='color: {{orderTotalChanged == "" ? "" : "red"}}'>¥{{orderTotalChanged == '' ?orderTotal : orderTotalChanged }}</view>  
+        </view>   
+      </view>
+    </view>
+    <view class='totalPrice text-right'>
+      合计：<text class='price color-default'>¥{{ orderTotalChanged == '' ?orderTotal : orderTotalChanged}}</text>
+    </view>
+  </view>
+
+  <!-- 付款信息  -->
+  <view class='payM'>
+    <view class='title border-b'>
+      付款信息
+    </view>
+    <view class='firm'>
+      <view>
+        收款方：{{receiveCompany}}
+      </view>
+      <view>
+        收款账号开户人：{{receiver}}
+      </view>
+      <view>
+        收款账户：{{accountNumber}}
+      </view>
+      <view>
+        收款账户开户行：{{bank}}
+      </view>
+    </view>
+  </view>
+
+  <!--  出库信息   -->
+  <view class='deliveryM'>
+    <view class='title border-b'>
+      出库信息
+    </view>
+    <view class='msg'>
+      <view>
+        {{orderStatus}}
+      </view>
+      <view>
+        {{consignmentDesc}}
+      </view>
+    </view>
+  </view>
+
+  <view class='footer flex-row' wx:if='{{orderStatus != "待确认" }}'>
+    <view class='col-50 text-center border-t' style='position: relative'>
+      <view class='img3' style='left: 168rpx; top: 8rpx;'>
+        <image mode='widthFix' class='smile' src='../images/smile.png'></image> 
+      </view>   
+      <button style='position: absolute; bottom: 0;left: 0' class='contact' open-type="contact">客服</button>
+    </view>
+    <view class='col-50 text-center tel' bindtap='call'>
+      <view>
+        <image class='img2' mode='widthFix' src='../images/phone_white.png'></image>      
+      </view>
+      <view>
+        电话
+      </view>
+    </view>
+  </view>
+
+  <view class='footer flex-row' wx:if='{{orderStatus == "待确认" }}'>
+    <view class='col-33 text-center border-t' style='position: relative'>
+      <view class='img3'>
+        <image class='smile' src='../images/smile.png' mode='widthFix'></image> 
+      </view>   
+      <button style='position: absolute; bottom: 0;left: 0' class='contact' open-type="contact">客服</button>
+    </view>
+    <view class='col-33 text-center tel2' bindtap='call'>
+      <view>
+        <image class='img2' mode='widthFix' src='../images/phone2.png'></image> 
+      </view>
+      <view>
+        电话
+      </view>
+    </view>
+    <view class='col-34 text-center sure'>
+      <form report-submit='true' bindsubmit='confirmOrder'>
+        <button form-type="submit" class='btn'>确认订单</button>
+      </form>
+    </view>
+  </view>
+
+
+  <view class='index text-center'>
+    <image mode='widthFix' bindtap='index' src='../images/index_white.png'></image>
+  </view>
+</view>
+
+<!-- <view class='qrcode' wx:if='{{qrcode}}' bindtap='qrcode'>
+  <view class='text-center '>
+    <image catchtap='scan' mode='widthFix' src='{{service}}' data-src='{{service}}'></image>
+  </view>
+  <view class='text-center scan'>
+    <view>
+      <text>点击长按保存二维码，</text>
+    </view>
+    <view>
+      <text>在微信中扫一扫，添加客服微信好友</text>    
+    </view>
+  </view>
+</view> -->
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

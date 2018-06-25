@@ -1,0 +1,22 @@
+<view class='container'>
+   <!--logo  -->
+   <view class='pic'>
+     <image bindtap='index' src='../images/logo.png'  mode='withFix'></image>
+   </view>
+   <!--登入密码模块  -->
+   <view class='box'>
+      <view class='content'>
+         <input placeholder-class='ph' placeholder='登录账号' class='username' value="{{account}}" bindinput='bindAccountInput' type='text'></input>   
+      </view>
+      <view class='content'>
+         <input type='password' placeholder-class='ph' placeholder='密码' class='password' value="{{password}}" bindinput='bindPasswordInput' ></input>
+      </view>
+   </view>
+  <!--忘记密码 注册  -->
+  <view class='tip'>
+    <navigator url="./forget" class='forget'>忘记密码</navigator>
+    <navigator url="./register" class='register'>注册</navigator>
+  </view>
+  <!--登录按钮  -->
+  <button class='confirm' bindtap="Login">登录</button>
+</view>

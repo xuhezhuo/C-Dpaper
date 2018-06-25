@@ -1,0 +1,27 @@
+<view class='container border-t' hidden='{{!connect}}'>
+  <view wx:if="{{ dataList.length != 0 }}" class='item flex-row border-b' wx:for='{{dataList}}' wx:key="{{index}}" data-index='{{index}}' bindtap='openDetailWin'>
+    <view wx:if='{{!item.read}}' class='alert'></view>
+    <view class='col-80'>
+      <view class='brief'>{{item.senderName}}</view>
+      <view class='content'>{{item.title}}</view>
+    </view>
+    <view class='col-20 text-center'>
+      <text class='time'>{{item.sendTime}}</text>
+    </view>
+  </view>
+  <view wx:if='{{orderList.length == 0}}' class='empty text-center'>
+      <image mode='widthFix' src='../images/empty.png'></image>
+      <view class='notice'>
+        <text>消息是空的哦~</text>
+      </view>
+  </view>
+</view>
+
+<view class='connect' hidden='{{connect}}'>
+  <view class='text-center txt'>
+    <text>您的手机网络好像不太流畅哦~</text>
+  </view>
+  <view class='text-center'>
+    <button bindtap='reConnect' class='btn'>重新加载</button>
+  </view>
+</view>

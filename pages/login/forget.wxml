@@ -1,0 +1,23 @@
+<view class='container'>
+<!--绑定的手机号码  -->
+   <view class='content'>
+      <input type='number' placeholder-class='ph' class='telepohone' placeholder='绑定的手机号' value='{{mobile}}' bindinput='bindMobileInput'></input>
+   </view>
+<!--验证码  -->
+   <view class='content'>
+      <input type='number' placeholder-class='ph' class='code' placeholder='验证码' value='{{code}}' bindinput='bindCodeInput'></input>
+      <view class='send' bindtap='sentCode'>{{timer}}</view>
+   </view>
+<!--新密码  -->
+   <view class='content'>
+      <input type='password' placeholder-class='ph' class='newpassword' placeholder='新密码' value='{{password}}'  bindinput='bindPswInput'></input>
+   </view>
+<!--重复新密码  -->
+   <view class='content'>
+      <input type='password' placeholder-class='ph' class='confirmPassword' placeholder='重复新密码' value='{{pwdRepeat}}'  bindinput='bindPsw2Input'></input>
+   </view>
+<!--按钮  -->
+   <view class='anniu'>
+      <button class='confirm' bindtap="setting" >确认</button>
+   </view>
+</view>

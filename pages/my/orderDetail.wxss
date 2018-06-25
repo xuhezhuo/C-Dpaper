@@ -1,0 +1,209 @@
+page{
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.container{
+  /* margin-bottom: 100rpx; */
+}
+
+.receiveM, .payM, .deliveryM{
+  background-color: #fff;
+  /* margin-bottom: 32rpx; */
+  padding-bottom: 18rpx;
+  border-bottom: solid #f7f7f7 27rpx;
+}
+
+.deliveryM{
+  margin-bottom: 100rpx;
+}
+
+.title{
+  font-size: 30rpx;
+  padding: 21rpx;
+}
+
+ .totalPrice{
+  font-size: 30rpx;
+  padding-right: 21rpx;  
+  font-weight: 300;
+ }
+
+ .price{
+   font-size: 38rpx;
+ }
+
+.customer{
+  font-size: 28rpx;
+  padding: 21rpx;
+  line-height: 50rpx;  
+}
+
+.order{
+  padding: 21rpx;
+}
+
+.table{
+  background-color: #f7f7f7;  
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.84);
+  font-weight: 300;  
+}
+
+.padding{
+  padding-top: 12rpx;
+  padding-bottom: 12rpx;
+}
+
+.padding2{
+  padding: 14rpx;
+}
+
+.tbody{
+  /* position:relative; */
+      /* display:flex;Flex布局 */
+    /* display: -webkit-flex;  Safari  */
+    /* align-items:center;指定垂直居中 */
+}
+
+.top{
+  padding-top: 11%; 
+}
+
+.bd{
+  border-bottom: solid #fff 4rpx;
+}
+
+.br{
+  border-right: solid #fff 4rpx;  
+}
+
+.firm, .msg{
+  font-size: 24rpx;
+  padding: 21rpx;
+  line-height: 46rpx;  
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  background-color: #fff;
+  width: 100%;
+  font-size: 24rpx;
+  font-weight: 300;
+  z-index: 999;
+}
+
+.img1{
+  width: 34rpx;
+
+}
+
+.img2{
+  width: 32rpx;
+}
+
+.service{
+  color: #666;
+  padding-top: 12rpx;
+}
+
+.tel{
+  background-color: #a53f35;
+  color: #fff;
+  padding-top: 12rpx;   
+}
+
+.tel2{
+  background-color: #fff;
+  color: #666;
+  padding-top: 12rpx;   
+  border: solid 1rpx #a53f35;
+}
+
+.sure{
+  background-color: #a53f35;
+  color: #fff;
+}
+
+
+.sure form{
+  width: 100%;
+  height: 100rpx;
+}
+
+.sure button{
+  background: transparent;
+  border-radius: 0;
+  color: #fff;
+  line-height: 104rpx;
+}
+
+.sure button::after{
+  border: none;
+}
+
+/* .qrcode{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.81);
+  z-index: 999;
+}
+
+.qrcode image{
+  width: 300rpx;
+  margin-top: 52%;
+}
+
+.scan {
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 48rpx;
+} */
+
+.contact{
+  width: 100%;
+  height: 99rpx;
+  border: none;
+  background-color: #fff;
+  font-size: 24rpx;
+  display:unset;
+  padding:12rpx;
+  padding-top:48rpx;
+  background: transparent;
+  color: #666;
+}
+
+.img3{
+  position: absolute;
+  top: 8rpx;
+  left: 101rpx;
+}
+
+button::after{
+  border: none;
+}
+
+.img3 image{
+  width: 42rpx;  
+}
+
+
+.index{
+  position: fixed;
+  left:8px;
+  bottom: 250rpx;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background-color: #a53f35;
+  /* color:  */
+}
+
+.index image{
+  width: 52rpx;
+  margin-top:18rpx
+}

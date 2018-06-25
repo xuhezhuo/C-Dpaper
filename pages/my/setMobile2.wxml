@@ -1,0 +1,15 @@
+<view class='container'>
+<!--标题-验证新手机号  -->
+   <text class='title'>验证新手机号码</text>
+<!--填写新手机号码  -->
+   <view class='content'>
+      <input type='number' placeholder-class='ph' class='text1' placeholder='新手机' bindinput='bindMobiel'></input>
+   </view>
+<!--填写验证码  -->
+   <view class='content'>
+      <input type='number' placeholder-class='ph' class='text2' placeholder='验证码' bindinput='bindCode'></input>
+      <text class='code' bindtouchcancel='getCode'>{{timer}}</text>
+   </view>
+<!--确认修改按钮  -->
+      <button  class='confirm' bindtap='setting'>确认修改</button>
+</view>

@@ -1,0 +1,397 @@
+.search{
+  margin: 0 auto;
+  margin-top: 12rpx;
+  width: 94%;
+}
+
+.search input{
+  text-align: center;
+  background-color: #ccc;
+  opacity: 0.52;
+  padding: 8rpx; 
+  border-radius: 6rpx;
+  font-size: 28rpx;
+}
+
+.placeholder{
+  color: #a53f35;
+  font-size: 25rpx;
+  font-weight: 300;
+}
+
+.scroll-view {
+  margin-top: 6rpx; 
+  width: 100%;
+  white-space: nowrap;
+}
+
+.scroll-view-item {
+  /* width: 17%; */
+  height: 74rpx;  
+  display: inline-block;
+  text-align: center;
+  padding-top: 12rpx; 
+  /* border-bottom: solid 2rpx rgba(210, 210, 210, 0.69); */
+  transition: 0.4s;
+  padding-right: 12px;
+  padding-left: 12px;  
+}
+
+.cang{
+  padding-right: 12rpx;
+}
+
+radio{
+  position:absolute;
+  right: 42rpx;
+}
+
+radio .wx-radio-input{
+   border: none; 
+   text-indent: 0;
+}
+
+/* radio选中时样式 */
+
+/* radio .wx-radio-input.wx-radio-input-checked{
+  border: none;
+  color: #fff;
+  background-color: #a53f35;
+} */
+
+.scroll-view-item text{
+  font-size: 30rpx;
+   color: rgb(100, 100, 100); 
+  font-weight: 300;
+  padding-bottom: 26rpx; 
+  line-height: 50rpx;
+}
+
+.scroll-view-item .active{
+  color: #a53f35;
+  border-bottom: solid 6rpx #a53f35;
+}
+
+.filter{
+  text-align: center;
+  font-size: 31rpx;
+  line-height: 84rpx;
+  height: 84rpx;
+  font-weight: 300;
+  border-bottom: solid 1rpx rgba(210, 210, 210, 0.69);
+}
+
+.filter .brand{
+  width: 38%;
+}
+
+.filter .weight{
+  width: 38%;
+}
+
+.filter .sec{
+  width: 24%;
+  color: #999999;
+}
+
+.filter .sec image{
+  width:32rpx;
+  height:32rpx;
+  position:relative;
+  top:4rpx;
+  left:9rpx;
+}
+
+.filter .arrow{
+  width:25rpx;
+  height:15rpx;
+  position:relative;
+  top: -3rpx;
+  left: 0rpx;
+  transition: .4s;
+}
+
+.filter .arrow.active{
+  transform: rotate(180deg);
+}
+
+.item-wrapper{
+  overflow: hidden;
+}
+
+.item-wrapper .item{
+  border-bottom: solid 1rpx rgba(210, 210, 210, 0.69);  
+}
+
+.item-wrapper .item .indent{
+  width: 3%;
+}
+
+.item .content{
+  width: 97%;
+}
+
+.item-wrapper .item .title{
+  width: 100%;
+  font-size: 26rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  font-weight: 300;
+  border-bottom: solid 1rpx rgba(210, 210, 210, 0.69);
+}
+
+.item-wrapper .item .title .company{
+  width: 80%;
+}
+
+.item-wrapper .item .title .company image{
+  width:36rpx;
+  padding-right:16rpx;
+  position:relative;
+  top:6rpx;
+  height:36rpx;
+}
+
+.item-wrapper .item .title .redpacket{
+  width: 20%;
+  text-align: center;
+}
+
+.item-wrapper .item .title .redpacket image{
+  width: 24rpx;
+  position: relative;   
+  top: 5rpx;
+  right: 9rpx;
+}
+
+.item-wrapper .item .product{
+  padding-top: 12rpx;
+  padding-bottom: 12rpx;
+}
+
+.product .description{
+  width: 100%;
+  line-height: 48rpx;
+  font-size: 26rpx;
+  font-weight: 300;
+}
+
+.product .description .storehouse{
+  color: #999999;
+}
+
+.product .description .price{
+  margin-top: 6rpx;
+  position: relative;
+}
+
+.product .description .price .num{
+  font-size: 30rpx;
+}
+
+.product .description .price .offsale{
+  font-size: 24rpx;  
+  position: absolute;
+  right: 10%;
+  top: 6rpx;
+}
+
+.brandSearch, .weightSearch{
+  background-color:rgba(0,0,0,0.5);
+  height: 0rpx;
+  position:absolute;
+  left: 0rpx;
+  top: 250rpx;
+  width: 100%;
+  z-index: 9999;
+  transition: .4s;
+}
+
+.brandSearch.active, .weightSearch.active{
+  height: 856rpx;
+}
+
+/* .brandSearch, .weightSearch{
+  padding-left:42rpx;
+} */
+
+.brandSearch .brandItem, .weightSearch .weightItem{
+  text-indent: 1.5em;
+  width: 100%;
+   /* padding-left: 42rpx;  */
+  background-color: #fff;
+  height: 84rpx;
+  line-height: 84rpx;
+  font-size: 30rpx;
+  font-weight: 300;
+  border-bottom: solid 1rpx rgba(210, 210, 210, 0.69);  
+  position: relative;
+}
+
+.sideBar{
+  /* background-color:rgba(0,0,0,0.5); */
+  width: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;  
+  right: 0rpx;  
+  z-index: 9999;
+  border-top: solid 1rpx rgba(210, 210, 210, 0.69);
+  transition: 250ms all ease-in-out;
+}
+
+.cover {
+  background-color:rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; 
+}
+
+.sideBar .empty{
+  width: 20%;
+}
+
+.sideBar .block{
+  width: 80%;
+  background-color: #fff;
+  /* position: relative;  */
+  overflow-y: auto;
+  padding-bottom: 98rpx;
+}
+
+.sideBar .block .title{
+  height: 64rpx;
+  line-height: 64rpx;
+  padding-top: 14rpx;
+  padding-bottom: 14rpx;  
+  font-weight: 400;
+  padding-left: 16rpx;
+}
+
+.sideBar .block .kindList .ktitle, .sideBar .block .nameList .ntitle, .sideBar .block .scaleList .stitle{
+  font-size: 28rpx;
+  font-weight: 300;
+  padding-top: 12rpx;
+  padding-bottom: 8rpx;
+  padding-left: 16rpx;
+}
+
+.kContent, .nContent, .sContent {
+  border-bottom: solid 1rpx rgba(210, 210, 210, 0.69);
+  padding-left: 16rpx;
+  padding-bottom: 12rpx;
+}
+
+.kContent .kItem , .nContent .nItem , .sContent .sItem{
+  width: 33%;
+  display: inline-block;
+}
+
+.kButton , .nButton , .sButton{
+  width: 180rpx; 
+  font-size: 25rpx;
+  line-height: 77rpx; 
+  overflow: hidden;
+  font-weight: 300;
+  background-color: #e5e5e5;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  border-radius: 7rpx; 
+  margin-top: 12rpx;
+}
+
+/* 仓库按钮  */
+.aContent{
+  border-bottom: solid 1rpx rgba(210, 210, 210, 0.69);
+  padding-left: 16rpx;
+  padding-bottom: 12rpx;
+}
+.aItem{
+  width: 50%;
+  display: inline-block;  
+}
+.aButton{
+  width: 280rpx; 
+  font-size: 24rpx;
+  line-height: 77rpx; 
+  overflow: hidden;
+  font-weight: 300;
+  background-color: #e5e5e5;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  border-radius: 7rpx; 
+  margin-top: 12rpx;
+}
+
+.kButton.active , .nButton.active , .sButton.active , .aButton.active{
+  background-color: #a53f35;
+  color: #fff;
+}
+
+button::after{
+  border: none;
+}
+
+.operation{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: solid 2rpx rgba(210, 210, 210, 0.69);
+  font-weight: 300;
+  z-index: 99999;
+}
+
+.operation .reset , .operation .done{
+  width: 40%;
+}
+
+.operation .reset {
+  background-color: #fff;
+}
+
+.operation .done{
+  background-color: #a53f35;
+  color: #fff;
+}
+
+.empty{
+  margin-top: 32%;
+}
+
+.empty image{
+  width: 210rpx;
+}
+
+.notice{
+  margin-top: 16rpx;
+}
+
+.notice text{
+  font-size: 36rpx;
+  color: #666;
+}
+
+.noMore{
+  width: 100%;
+  height: 120rpx;
+  background-color: #f7f7f7;
+  color: #666;
+  padding-top: 24rpx;
+  font-size: 26rpx; 
+}
+
+.none{
+  font-size: 30rpx;
+  color: #666;
+}
+
+
+
+

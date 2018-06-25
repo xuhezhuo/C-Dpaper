@@ -1,0 +1,16 @@
+<view class='container'>
+<!--标题-验证旧手机号  -->
+   <view class='title'>验证旧手机号码</view>
+<!--填写旧手机号码  -->
+   <view class='content'>
+      <input type='number' placeholder-class='ph' class='text' placeholder='旧手机' value='{{mobile}}' disabled='true'></input>
+   </view>
+<!--填写验证码  -->
+   <view class='content'>
+      <input type='number' placeholder-class='ph' class='text2' placeholder='验证码' bindinput='bindCode'></input>
+      <view class='code' bindtap='sentCode'>{{timer}}</view>
+   </view>
+<!--下一步按钮  -->
+      <button class='confirm' bindtap='next'>下一步</button>
+
+</view>
